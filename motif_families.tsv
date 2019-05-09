@@ -1,0 +1,1346 @@
+AHR_HUMAN.H11MO.0.B	PAS domain factors{1.2.5}
+AIRE_HUMAN.H11MO.0.C	AIRE{5.3.1}
+ALX1_HUMAN.H11MO.0.B	Paired-related HD factors{3.1.3}
+ALX3_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+ALX4_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+ANDR_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+ANDR_HUMAN.H11MO.1.A	Steroid hormone receptors (NR3){2.1.1}
+ANDR_HUMAN.H11MO.2.A	Steroid hormone receptors (NR3){2.1.1}
+ARI3A_HUMAN.H11MO.0.D	ARID-related factors{3.7.1}
+ARI5B_HUMAN.H11MO.0.C	ARID-related factors{3.7.1}
+ARNT_HUMAN.H11MO.0.B	PAS domain factors{1.2.5}
+ARNT2_HUMAN.H11MO.0.D	PAS domain factors{1.2.5}
+BMAL1_HUMAN.H11MO.0.A	PAS domain factors{1.2.5}
+ARX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+ASCL1_HUMAN.H11MO.0.A	MyoD / ASC-related factors{1.2.2}
+ASCL2_HUMAN.H11MO.0.D	MyoD / ASC-related factors{1.2.2}
+ATF1_HUMAN.H11MO.0.B	CREB-related factors{1.1.7}
+ATF2_HUMAN.H11MO.0.B	Jun-related factors{1.1.1}
+ATF2_HUMAN.H11MO.1.B	Jun-related factors{1.1.1}
+ATF2_HUMAN.H11MO.2.C	Jun-related factors{1.1.1}
+ATF3_HUMAN.H11MO.0.A	Fos-related factors{1.1.2}
+ATF4_HUMAN.H11MO.0.A	ATF-4-related factors{1.1.6}
+ATF6A_HUMAN.H11MO.0.B	CREB-related factors{1.1.7}
+ATF7_HUMAN.H11MO.0.D	Jun-related factors{1.1.1}
+ATOH1_HUMAN.H11MO.0.B	Tal-related factors{1.2.3}
+BACH1_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+BACH2_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+BARH1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+BARH2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+BARX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+BARX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+BATF_HUMAN.H11MO.0.A	B-ATF-related factors{1.1.4}
+BATF_HUMAN.H11MO.1.A	B-ATF-related factors{1.1.4}
+BATF3_HUMAN.H11MO.0.B	B-ATF-related factors{1.1.4}
+BC11A_HUMAN.H11MO.0.A	Factors with multiple dispersed zinc fingers{2.3.4}
+BCL6_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+BCL6B_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+BHA15_HUMAN.H11MO.0.B	Tal-related factors{1.2.3}
+BHE22_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+BHE23_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+BHE40_HUMAN.H11MO.0.A	Hairy-related factors{1.2.4}
+BHE41_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+BPTF_HUMAN.H11MO.0.D	unknown
+BRCA1_HUMAN.H11MO.0.D	unknown
+BSH_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+PEBB_HUMAN.H11MO.0.C	unknown
+CDC5L_HUMAN.H11MO.0.D	Myb/SANT domain factors{3.5.1}
+CDX1_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+CDX2_HUMAN.H11MO.0.A	HOX-related factors{3.1.1}
+CEBPA_HUMAN.H11MO.0.A	C/EBP-related{1.1.8}
+CEBPB_HUMAN.H11MO.0.A	C/EBP-related{1.1.8}
+CEBPD_HUMAN.H11MO.0.C	C/EBP-related{1.1.8}
+CEBPE_HUMAN.H11MO.0.A	C/EBP-related{1.1.8}
+CEBPG_HUMAN.H11MO.0.B	C/EBP-related{1.1.8}
+CEBPZ_HUMAN.H11MO.0.D	unknown
+CENPB_HUMAN.H11MO.0.D	unknown
+CLOCK_HUMAN.H11MO.0.C	PAS domain factors{1.2.5}
+CPEB1_HUMAN.H11MO.0.D	unknown
+CREB1_HUMAN.H11MO.0.A	CREB-related factors{1.1.7}
+CREB3_HUMAN.H11MO.0.D	CREB-related factors{1.1.7}
+CR3L1_HUMAN.H11MO.0.D	CREB-related factors{1.1.7}
+CR3L2_HUMAN.H11MO.0.D	CREB-related factors{1.1.7}
+CREB5_HUMAN.H11MO.0.D	Jun-related factors{1.1.1}
+CREM_HUMAN.H11MO.0.C	CREB-related factors{1.1.7}
+CRX_HUMAN.H11MO.0.B	Paired-related HD factors{3.1.3}
+CTCF_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+CTCFL_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+CUX1_HUMAN.H11MO.0.C	HD-CUT factors{3.1.9}
+CUX2_HUMAN.H11MO.0.D	HD-CUT factors{3.1.9}
+CXXC1_HUMAN.H11MO.0.D	CpG-binding proteins{2.6.1}
+DBP_HUMAN.H11MO.0.B	C/EBP-related{1.1.8}
+DDIT3_HUMAN.H11MO.0.D	C/EBP-related{1.1.8}
+DLX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+DLX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+DLX3_HUMAN.H11MO.0.C	NK-related factors{3.1.2}
+DLX4_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+DLX5_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+DLX6_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+DMBX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+DMRT1_HUMAN.H11MO.0.D	DMRT{2.5.1}
+DPRX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+DRGX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+DUX4_HUMAN.H11MO.0.A	Paired-related HD factors{3.1.3}
+DUXA_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+E2F1_HUMAN.H11MO.0.A	E2F-related factors{3.3.2}
+E2F2_HUMAN.H11MO.0.B	E2F-related factors{3.3.2}
+E2F3_HUMAN.H11MO.0.A	E2F-related factors{3.3.2}
+E2F4_HUMAN.H11MO.0.A	E2F-related factors{3.3.2}
+E2F4_HUMAN.H11MO.1.A	E2F-related factors{3.3.2}
+E2F5_HUMAN.H11MO.0.B	E2F-related factors{3.3.2}
+E2F6_HUMAN.H11MO.0.A	E2F-related factors{3.3.2}
+E2F7_HUMAN.H11MO.0.B	E2F-related factors{3.3.2}
+E2F8_HUMAN.H11MO.0.D	E2F-related factors{3.3.2}
+E4F1_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+COE1_HUMAN.H11MO.0.A	Early B-Cell Factor-related factors{6.1.5}
+EGR1_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+EGR2_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+EGR2_HUMAN.H11MO.1.A	Three-zinc finger Krüppel-related factors{2.3.1}
+EGR3_HUMAN.H11MO.0.D	Three-zinc finger Krüppel-related factors{2.3.1}
+EGR4_HUMAN.H11MO.0.D	Three-zinc finger Krüppel-related factors{2.3.1}
+EHF_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+ELF1_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ELF2_HUMAN.H11MO.0.C	Ets-related factors{3.5.2}
+ELF3_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ELF5_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ELK1_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+ELK3_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+ELK4_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+EMX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+EMX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+HME1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+HME2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+EOMES_HUMAN.H11MO.0.D	TBrain-related factors{6.5.2}
+EPAS1_HUMAN.H11MO.0.B	PAS domain factors{1.2.5}
+ERG_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ESR1_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+ESR1_HUMAN.H11MO.1.A	Steroid hormone receptors (NR3){2.1.1}
+ESR2_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+ESR2_HUMAN.H11MO.1.A	Steroid hormone receptors (NR3){2.1.1}
+ERR1_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+ERR2_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+ERR3_HUMAN.H11MO.0.B	Steroid hormone receptors (NR3){2.1.1}
+ESX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+ETS1_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ETS2_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+ETV1_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+ETV2_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+ETV3_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+ETV4_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+ETV5_HUMAN.H11MO.0.C	Ets-related factors{3.5.2}
+ETV6_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+ETV7_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+EVX1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+EVX2_HUMAN.H11MO.0.A	HOX-related factors{3.1.1}
+FEV_HUMAN.H11MO.0.B	Ets-related factors{3.5.2}
+FEZF1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+FIGLA_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+FLI1_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+FLI1_HUMAN.H11MO.1.A	Ets-related factors{3.5.2}
+FOS_HUMAN.H11MO.0.A	Fos-related factors{1.1.2}
+FOSB_HUMAN.H11MO.0.A	Fos-related factors{1.1.2}
+FOSL1_HUMAN.H11MO.0.A	Fos-related factors{1.1.2}
+FOSL2_HUMAN.H11MO.0.A	Fos-related factors{1.1.2}
+FOXA1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXA2_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXA3_HUMAN.H11MO.0.B	Forkhead box (FOX) factors{3.3.1}
+FOXB1_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXC1_HUMAN.H11MO.0.C	Forkhead box (FOX) factors{3.3.1}
+FOXC2_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXD1_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXD2_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXD3_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXF1_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXF2_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXG1_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXH1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXI1_HUMAN.H11MO.0.B	Forkhead box (FOX) factors{3.3.1}
+FOXJ2_HUMAN.H11MO.0.C	Forkhead box (FOX) factors{3.3.1}
+FOXJ3_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXJ3_HUMAN.H11MO.1.B	Forkhead box (FOX) factors{3.3.1}
+FOXK1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXL1_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXM1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXO1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXO3_HUMAN.H11MO.0.B	Forkhead box (FOX) factors{3.3.1}
+FOXO4_HUMAN.H11MO.0.C	Forkhead box (FOX) factors{3.3.1}
+FOXO6_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXP1_HUMAN.H11MO.0.A	Forkhead box (FOX) factors{3.3.1}
+FOXP2_HUMAN.H11MO.0.C	Forkhead box (FOX) factors{3.3.1}
+FOXP3_HUMAN.H11MO.0.D	Forkhead box (FOX) factors{3.3.1}
+FOXQ1_HUMAN.H11MO.0.C	Forkhead box (FOX) factors{3.3.1}
+FUBP1_HUMAN.H11MO.0.D	unknown
+GABPA_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+GATA1_HUMAN.H11MO.0.A	GATA-type zinc fingers{2.2.1}
+GATA1_HUMAN.H11MO.1.A	GATA-type zinc fingers{2.2.1}
+GATA2_HUMAN.H11MO.0.A	GATA-type zinc fingers{2.2.1}
+GATA2_HUMAN.H11MO.1.A	GATA-type zinc fingers{2.2.1}
+GATA3_HUMAN.H11MO.0.A	GATA-type zinc fingers{2.2.1}
+GATA4_HUMAN.H11MO.0.A	GATA-type zinc fingers{2.2.1}
+GATA5_HUMAN.H11MO.0.D	GATA-type zinc fingers{2.2.1}
+GATA6_HUMAN.H11MO.0.A	GATA-type zinc fingers{2.2.1}
+GBX1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+GBX2_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+GCM1_HUMAN.H11MO.0.D	GCM factors{7.2.1}
+GCM2_HUMAN.H11MO.0.D	GCM factors{7.2.1}
+GFI1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+GFI1B_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+GLI1_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+GLI2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+GLI3_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+GLIS1_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+GLIS2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+GLIS3_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+GMEB2_HUMAN.H11MO.0.D	GMEB{5.3.3}
+GRHL1_HUMAN.H11MO.0.D	Grainyhead-related factors{6.7.1}
+GRHL2_HUMAN.H11MO.0.A	Grainyhead-related factors{6.7.1}
+GSC_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+GSC2_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+GSX1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+GSX2_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HAND1_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+HAND1_HUMAN.H11MO.1.D	Tal-related factors{1.2.3}
+HBP1_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+HES1_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+HES5_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+HES7_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+HESX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+HEY1_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+HEY2_HUMAN.H11MO.0.D	Hairy-related factors{1.2.4}
+HIC1_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+HIC2_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+HIF1A_HUMAN.H11MO.0.C	PAS domain factors{1.2.5}
+HINFP_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZEP1_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZEP2_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+HLF_HUMAN.H11MO.0.C	C/EBP-related{1.1.8}
+HLTF_HUMAN.H11MO.0.D	unknown
+HMBX1_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+HMGA1_HUMAN.H11MO.0.D	HMGA factors{8.2.1}
+HMGA2_HUMAN.H11MO.0.D	HMGA factors{8.2.1}
+HMX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+HMX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+HMX3_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+HNF1A_HUMAN.H11MO.0.C	POU domain factors{3.1.10}
+HNF1B_HUMAN.H11MO.0.A	POU domain factors{3.1.10}
+HNF1B_HUMAN.H11MO.1.A	POU domain factors{3.1.10}
+HNF4A_HUMAN.H11MO.0.A	RXR-related receptors (NR2){2.1.3}
+HNF4G_HUMAN.H11MO.0.B	RXR-related receptors (NR2){2.1.3}
+HOMEZ_HUMAN.H11MO.0.D	HD-ZF factors{3.1.8}
+HXA1_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXA10_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXA11_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXA13_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXA2_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXA5_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXA7_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXA9_HUMAN.H11MO.0.B	HOX-related factors{3.1.1}
+HXB1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXB13_HUMAN.H11MO.0.A	HOX-related factors{3.1.1}
+HXB2_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXB3_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXB4_HUMAN.H11MO.0.B	HOX-related factors{3.1.1}
+HXB6_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXB7_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXB8_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXC10_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC11_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC12_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC13_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC6_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC8_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXC9_HUMAN.H11MO.0.C	HOX-related factors{3.1.1}
+HXD10_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD11_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD12_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD13_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD3_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD4_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD8_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HXD9_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+HSF1_HUMAN.H11MO.0.A	HSF factors{3.4.1}
+HSF1_HUMAN.H11MO.1.A	HSF factors{3.4.1}
+HSF2_HUMAN.H11MO.0.A	HSF factors{3.4.1}
+HSF4_HUMAN.H11MO.0.D	HSF factors{3.4.1}
+HSFY1_HUMAN.H11MO.0.D	HSF factors{3.4.1}
+ID4_HUMAN.H11MO.0.D	HLH domain only{1.2.8}
+IKZF1_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+INSM1_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+IRF1_HUMAN.H11MO.0.A	Interferon-regulatory factors{3.5.3}
+IRF2_HUMAN.H11MO.0.A	Interferon-regulatory factors{3.5.3}
+IRF3_HUMAN.H11MO.0.B	Interferon-regulatory factors{3.5.3}
+IRF4_HUMAN.H11MO.0.A	Interferon-regulatory factors{3.5.3}
+IRF5_HUMAN.H11MO.0.D	Interferon-regulatory factors{3.5.3}
+IRF7_HUMAN.H11MO.0.C	Interferon-regulatory factors{3.5.3}
+IRF8_HUMAN.H11MO.0.B	Interferon-regulatory factors{3.5.3}
+IRF9_HUMAN.H11MO.0.C	Interferon-regulatory factors{3.5.3}
+IRX2_HUMAN.H11MO.0.D	TALE-type homeo domain factors{3.1.4}
+IRX3_HUMAN.H11MO.0.D	TALE-type homeo domain factors{3.1.4}
+ISL1_HUMAN.H11MO.0.A	HD-LIM factors{3.1.5}
+ISL2_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+ISX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+JDP2_HUMAN.H11MO.0.D	Fos-related factors{1.1.2}
+JUN_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+JUNB_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+JUND_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+KLF1_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF12_HUMAN.H11MO.0.C	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF13_HUMAN.H11MO.0.D	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF14_HUMAN.H11MO.0.D	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF15_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF16_HUMAN.H11MO.0.D	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF3_HUMAN.H11MO.0.B	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF4_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF5_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF6_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF8_HUMAN.H11MO.0.C	Three-zinc finger Krüppel-related factors{2.3.1}
+KLF9_HUMAN.H11MO.0.C	Three-zinc finger Krüppel-related factors{2.3.1}
+LBX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+LEF1_HUMAN.H11MO.0.A	TCF-7-related factors{4.1.3}
+LHX2_HUMAN.H11MO.0.A	HD-LIM factors{3.1.5}
+LHX3_HUMAN.H11MO.0.C	HD-LIM factors{3.1.5}
+LHX4_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LHX6_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LHX8_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LHX9_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LMX1A_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LMX1B_HUMAN.H11MO.0.D	HD-LIM factors{3.1.5}
+LYL1_HUMAN.H11MO.0.A	Tal-related factors{1.2.3}
+MAF_HUMAN.H11MO.0.A	Maf-related factors{1.1.3}
+MAF_HUMAN.H11MO.1.B	Maf-related factors{1.1.3}
+MAFA_HUMAN.H11MO.0.D	Maf-related factors{1.1.3}
+MAFB_HUMAN.H11MO.0.B	Maf-related factors{1.1.3}
+MAFF_HUMAN.H11MO.0.B	Maf-related factors{1.1.3}
+MAFF_HUMAN.H11MO.1.B	Maf-related factors{1.1.3}
+MAFG_HUMAN.H11MO.0.A	Maf-related factors{1.1.3}
+MAFG_HUMAN.H11MO.1.A	Maf-related factors{1.1.3}
+MAFK_HUMAN.H11MO.0.A	Maf-related factors{1.1.3}
+MAFK_HUMAN.H11MO.1.A	Maf-related factors{1.1.3}
+MAX_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+MAZ_HUMAN.H11MO.0.A	Factors with multiple dispersed zinc fingers{2.3.4}
+MAZ_HUMAN.H11MO.1.A	Factors with multiple dispersed zinc fingers{2.3.4}
+MBD2_HUMAN.H11MO.0.B	unknown
+EVI1_HUMAN.H11MO.0.B	Factors with multiple dispersed zinc fingers{2.3.4}
+MECP2_HUMAN.H11MO.0.C	unknown
+MEF2A_HUMAN.H11MO.0.A	Regulators of differentiation{5.1.1}
+MEF2B_HUMAN.H11MO.0.A	Regulators of differentiation{5.1.1}
+MEF2C_HUMAN.H11MO.0.A	Regulators of differentiation{5.1.1}
+MEF2D_HUMAN.H11MO.0.A	Regulators of differentiation{5.1.1}
+MEIS1_HUMAN.H11MO.0.A	TALE-type homeo domain factors{3.1.4}
+MEIS1_HUMAN.H11MO.1.B	TALE-type homeo domain factors{3.1.4}
+MEIS2_HUMAN.H11MO.0.B	TALE-type homeo domain factors{3.1.4}
+MEIS3_HUMAN.H11MO.0.D	TALE-type homeo domain factors{3.1.4}
+MEOX1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+MEOX2_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+MESP1_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+MGAP_HUMAN.H11MO.0.D	ambiguous
+MITF_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+MIXL1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+MLX_HUMAN.H11MO.0.D	bHLH-ZIP factors{1.2.6}
+MLXPL_HUMAN.H11MO.0.D	bHLH-ZIP factors{1.2.6}
+MNX1_HUMAN.H11MO.0.D	HOX-related factors{3.1.1}
+MSX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+MSX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+MTF1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+MXI1_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+MXI1_HUMAN.H11MO.1.A	bHLH-ZIP factors{1.2.6}
+MYB_HUMAN.H11MO.0.A	Myb/SANT domain factors{3.5.1}
+MYBA_HUMAN.H11MO.0.D	Myb/SANT domain factors{3.5.1}
+MYBB_HUMAN.H11MO.0.D	Myb/SANT domain factors{3.5.1}
+MYC_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+MYCN_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+MYF6_HUMAN.H11MO.0.C	MyoD / ASC-related factors{1.2.2}
+MYNN_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+MYOD1_HUMAN.H11MO.0.A	MyoD / ASC-related factors{1.2.2}
+MYOD1_HUMAN.H11MO.1.A	MyoD / ASC-related factors{1.2.2}
+MYOG_HUMAN.H11MO.0.B	MyoD / ASC-related factors{1.2.2}
+MZF1_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+NANOG_HUMAN.H11MO.0.A	NK-related factors{3.1.2}
+NANOG_HUMAN.H11MO.1.B	NK-related factors{3.1.2}
+NDF1_HUMAN.H11MO.0.A	Tal-related factors{1.2.3}
+NDF2_HUMAN.H11MO.0.B	Tal-related factors{1.2.3}
+NGN2_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+NFAT5_HUMAN.H11MO.0.D	NFAT-related factors{6.1.3}
+NFAC1_HUMAN.H11MO.0.B	NFAT-related factors{6.1.3}
+NFAC1_HUMAN.H11MO.1.B	NFAT-related factors{6.1.3}
+NFAC2_HUMAN.H11MO.0.B	NFAT-related factors{6.1.3}
+NFAC3_HUMAN.H11MO.0.B	NFAT-related factors{6.1.3}
+NFAC4_HUMAN.H11MO.0.C	NFAT-related factors{6.1.3}
+NFE2_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+NF2L1_HUMAN.H11MO.0.C	Jun-related factors{1.1.1}
+NF2L2_HUMAN.H11MO.0.A	Jun-related factors{1.1.1}
+NFIA_HUMAN.H11MO.0.C	Nuclear factor 1{7.1.2}
+NFIA_HUMAN.H11MO.1.D	Nuclear factor 1{7.1.2}
+NFIB_HUMAN.H11MO.0.D	Nuclear factor 1{7.1.2}
+NFIC_HUMAN.H11MO.0.A	Nuclear factor 1{7.1.2}
+NFIC_HUMAN.H11MO.1.A	Nuclear factor 1{7.1.2}
+NFIL3_HUMAN.H11MO.0.D	C/EBP-related{1.1.8}
+NFKB1_HUMAN.H11MO.0.A	NF-kappaB-related factors{6.1.1}
+NFKB2_HUMAN.H11MO.0.B	NF-kappaB-related factors{6.1.1}
+NFYA_HUMAN.H11MO.0.A	Heteromeric CCAAT-binding factors{4.2.1}
+NFYB_HUMAN.H11MO.0.A	Heteromeric CCAAT-binding factors{4.2.1}
+NFYC_HUMAN.H11MO.0.A	Heteromeric CCAAT-binding factors{4.2.1}
+HEN1_HUMAN.H11MO.0.C	Tal-related factors{1.2.3}
+NKX21_HUMAN.H11MO.0.A	NK-related factors{3.1.2}
+NKX22_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+NKX23_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+NKX25_HUMAN.H11MO.0.B	NK-related factors{3.1.2}
+NKX28_HUMAN.H11MO.0.C	NK-related factors{3.1.2}
+NKX31_HUMAN.H11MO.0.C	NK-related factors{3.1.2}
+NKX32_HUMAN.H11MO.0.C	NK-related factors{3.1.2}
+NKX61_HUMAN.H11MO.0.B	NK-related factors{3.1.2}
+NKX61_HUMAN.H11MO.1.B	NK-related factors{3.1.2}
+NKX62_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+NOBOX_HUMAN.H11MO.0.C	Paired-related HD factors{3.1.3}
+NOTO_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+NR0B1_HUMAN.H11MO.0.D	DAX-related receptors (NR0){2.1.7}
+NR1D1_HUMAN.H11MO.0.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1D1_HUMAN.H11MO.1.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1H2_HUMAN.H11MO.0.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1H3_HUMAN.H11MO.0.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1H3_HUMAN.H11MO.1.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1H4_HUMAN.H11MO.0.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1H4_HUMAN.H11MO.1.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1I2_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1I2_HUMAN.H11MO.1.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1I3_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR1I3_HUMAN.H11MO.1.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+NR2C1_HUMAN.H11MO.0.C	RXR-related receptors (NR2){2.1.3}
+NR2C2_HUMAN.H11MO.0.B	RXR-related receptors (NR2){2.1.3}
+NR2E1_HUMAN.H11MO.0.D	RXR-related receptors (NR2){2.1.3}
+NR2E3_HUMAN.H11MO.0.C	RXR-related receptors (NR2){2.1.3}
+COT1_HUMAN.H11MO.0.C	RXR-related receptors (NR2){2.1.3}
+COT1_HUMAN.H11MO.1.C	RXR-related receptors (NR2){2.1.3}
+COT2_HUMAN.H11MO.0.A	RXR-related receptors (NR2){2.1.3}
+COT2_HUMAN.H11MO.1.A	RXR-related receptors (NR2){2.1.3}
+NR2F6_HUMAN.H11MO.0.D	RXR-related receptors (NR2){2.1.3}
+GCR_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+GCR_HUMAN.H11MO.1.A	Steroid hormone receptors (NR3){2.1.1}
+MCR_HUMAN.H11MO.0.D	Steroid hormone receptors (NR3){2.1.1}
+NR4A1_HUMAN.H11MO.0.A	NGFI-B-related receptors (NR4){2.1.4}
+NR4A2_HUMAN.H11MO.0.C	NGFI-B-related receptors (NR4){2.1.4}
+NR4A3_HUMAN.H11MO.0.D	NGFI-B-related receptors (NR4){2.1.4}
+STF1_HUMAN.H11MO.0.B	FTZ-F1-related receptors (NR5){2.1.5}
+NR5A2_HUMAN.H11MO.0.B	FTZ-F1-related receptors (NR5){2.1.5}
+NR6A1_HUMAN.H11MO.0.B	GCNF-related receptors (NR6){2.1.6}
+NRF1_HUMAN.H11MO.0.A	NRF{0.0.6}
+NRL_HUMAN.H11MO.0.D	Maf-related factors{1.1.3}
+OLIG1_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+OLIG2_HUMAN.H11MO.0.B	Tal-related factors{1.2.3}
+OLIG2_HUMAN.H11MO.1.B	Tal-related factors{1.2.3}
+OLIG3_HUMAN.H11MO.0.D	Tal-related factors{1.2.3}
+HNF6_HUMAN.H11MO.0.B	HD-CUT factors{3.1.9}
+ONEC2_HUMAN.H11MO.0.D	HD-CUT factors{3.1.9}
+ONEC3_HUMAN.H11MO.0.D	HD-CUT factors{3.1.9}
+OSR2_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+OTX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+OTX2_HUMAN.H11MO.0.A	Paired-related HD factors{3.1.3}
+OVOL1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+OVOL2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+PATZ1_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+PATZ1_HUMAN.H11MO.1.C	Factors with multiple dispersed zinc fingers{2.3.4}
+PAX1_HUMAN.H11MO.0.D	Paired domain only{3.2.2}
+PAX2_HUMAN.H11MO.0.D	Paired domain only{3.2.2}
+PAX3_HUMAN.H11MO.0.D	Paired plus homeo domain{3.2.1}
+PAX4_HUMAN.H11MO.0.D	Paired plus homeo domain{3.2.1}
+PAX5_HUMAN.H11MO.0.A	Paired domain only{3.2.2}
+PAX6_HUMAN.H11MO.0.C	Paired plus homeo domain{3.2.1}
+PAX7_HUMAN.H11MO.0.D	Paired plus homeo domain{3.2.1}
+PAX8_HUMAN.H11MO.0.D	Paired domain only{3.2.2}
+PBX1_HUMAN.H11MO.0.A	TALE-type homeo domain factors{3.1.4}
+PBX1_HUMAN.H11MO.1.C	TALE-type homeo domain factors{3.1.4}
+PBX2_HUMAN.H11MO.0.C	TALE-type homeo domain factors{3.1.4}
+PBX3_HUMAN.H11MO.0.A	TALE-type homeo domain factors{3.1.4}
+PBX3_HUMAN.H11MO.1.A	TALE-type homeo domain factors{3.1.4}
+PDX1_HUMAN.H11MO.0.A	HOX-related factors{3.1.1}
+PDX1_HUMAN.H11MO.1.A	HOX-related factors{3.1.1}
+PRGR_HUMAN.H11MO.0.A	Steroid hormone receptors (NR3){2.1.1}
+PRGR_HUMAN.H11MO.1.A	Steroid hormone receptors (NR3){2.1.1}
+PHX2A_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PHX2B_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PITX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PITX2_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PITX3_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PKNX1_HUMAN.H11MO.0.B	TALE-type homeo domain factors{3.1.4}
+PLAG1_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+PLAL1_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+PIT1_HUMAN.H11MO.0.C	POU domain factors{3.1.10}
+PO2F1_HUMAN.H11MO.0.C	POU domain factors{3.1.10}
+PO2F2_HUMAN.H11MO.0.A	POU domain factors{3.1.10}
+PO2F3_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO3F1_HUMAN.H11MO.0.C	POU domain factors{3.1.10}
+PO3F2_HUMAN.H11MO.0.A	POU domain factors{3.1.10}
+PO3F3_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO3F4_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO4F1_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO4F2_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO4F3_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO5F1_HUMAN.H11MO.0.A	POU domain factors{3.1.10}
+PO5F1_HUMAN.H11MO.1.A	POU domain factors{3.1.10}
+P5F1B_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO6F1_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PO6F2_HUMAN.H11MO.0.D	POU domain factors{3.1.10}
+PPARA_HUMAN.H11MO.0.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+PPARA_HUMAN.H11MO.1.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+PPARD_HUMAN.H11MO.0.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+PPARG_HUMAN.H11MO.0.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+PPARG_HUMAN.H11MO.1.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+PRDM1_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+PRD14_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+PRDM4_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+PRDM6_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+PROP1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PROX1_HUMAN.H11MO.0.D	HD-PROS factors{3.1.7}
+PRRX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+PRRX2_HUMAN.H11MO.0.C	Paired-related HD factors{3.1.3}
+PTF1A_HUMAN.H11MO.0.B	Tal-related factors{1.2.3}
+PTF1A_HUMAN.H11MO.1.B	Tal-related factors{1.2.3}
+PURA_HUMAN.H11MO.0.D	PUR{0.0.5}
+RARA_HUMAN.H11MO.0.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARA_HUMAN.H11MO.1.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARA_HUMAN.H11MO.2.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARB_HUMAN.H11MO.0.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARG_HUMAN.H11MO.0.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARG_HUMAN.H11MO.1.B	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RARG_HUMAN.H11MO.2.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+RAX2_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+SUH_HUMAN.H11MO.0.A	CSL-related factors{6.1.4}
+REL_HUMAN.H11MO.0.B	NF-kappaB-related factors{6.1.1}
+TF65_HUMAN.H11MO.0.A	NF-kappaB-related factors{6.1.1}
+RELB_HUMAN.H11MO.0.C	NF-kappaB-related factors{6.1.1}
+REST_HUMAN.H11MO.0.A	Factors with multiple dispersed zinc fingers{2.3.4}
+RFX1_HUMAN.H11MO.0.B	RFX-related factors{3.3.3}
+RFX1_HUMAN.H11MO.1.B	RFX-related factors{3.3.3}
+RFX2_HUMAN.H11MO.0.A	RFX-related factors{3.3.3}
+RFX2_HUMAN.H11MO.1.A	RFX-related factors{3.3.3}
+RFX3_HUMAN.H11MO.0.B	RFX-related factors{3.3.3}
+RFX4_HUMAN.H11MO.0.D	RFX-related factors{3.3.3}
+RFX5_HUMAN.H11MO.0.A	RFX-related factors{3.3.3}
+RFX5_HUMAN.H11MO.1.A	RFX-related factors{3.3.3}
+RHXF1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+RORA_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RORG_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+RREB1_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+RUNX1_HUMAN.H11MO.0.A	Runt-related factors{6.4.1}
+RUNX2_HUMAN.H11MO.0.A	Runt-related factors{6.4.1}
+RUNX3_HUMAN.H11MO.0.A	Runt-related factors{6.4.1}
+RXRA_HUMAN.H11MO.0.A	RXR-related receptors (NR2){2.1.3}
+RXRA_HUMAN.H11MO.1.A	RXR-related receptors (NR2){2.1.3}
+RXRB_HUMAN.H11MO.0.C	RXR-related receptors (NR2){2.1.3}
+RXRG_HUMAN.H11MO.0.B	RXR-related receptors (NR2){2.1.3}
+SALL4_HUMAN.H11MO.0.B	Factors with multiple dispersed zinc fingers{2.3.4}
+SCRT1_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+SCRT2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+SHOX_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+SHOX2_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+SIX1_HUMAN.H11MO.0.A	HD-SINE factors{3.1.6}
+SIX2_HUMAN.H11MO.0.A	HD-SINE factors{3.1.6}
+SMAD1_HUMAN.H11MO.0.D	SMAD factors{7.1.1}
+SMAD2_HUMAN.H11MO.0.A	SMAD factors{7.1.1}
+SMAD3_HUMAN.H11MO.0.B	SMAD factors{7.1.1}
+SMAD4_HUMAN.H11MO.0.B	SMAD factors{7.1.1}
+SMCA1_HUMAN.H11MO.0.C	Myb/SANT domain factors{3.5.1}
+SMCA5_HUMAN.H11MO.0.C	Myb/SANT domain factors{3.5.1}
+SNAI1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+SNAI2_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+SOX1_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX10_HUMAN.H11MO.0.B	SOX-related factors{4.1.1}
+SOX10_HUMAN.H11MO.1.A	SOX-related factors{4.1.1}
+SOX11_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX13_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX15_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX17_HUMAN.H11MO.0.C	SOX-related factors{4.1.1}
+SOX18_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX2_HUMAN.H11MO.0.A	SOX-related factors{4.1.1}
+SOX2_HUMAN.H11MO.1.A	SOX-related factors{4.1.1}
+SOX21_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX3_HUMAN.H11MO.0.B	SOX-related factors{4.1.1}
+SOX4_HUMAN.H11MO.0.B	SOX-related factors{4.1.1}
+SOX5_HUMAN.H11MO.0.C	SOX-related factors{4.1.1}
+SOX7_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX8_HUMAN.H11MO.0.D	SOX-related factors{4.1.1}
+SOX9_HUMAN.H11MO.0.B	SOX-related factors{4.1.1}
+SOX9_HUMAN.H11MO.1.B	SOX-related factors{4.1.1}
+SP1_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+SP1_HUMAN.H11MO.1.A	Three-zinc finger Krüppel-related factors{2.3.1}
+SP2_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+SP2_HUMAN.H11MO.1.B	Three-zinc finger Krüppel-related factors{2.3.1}
+SP3_HUMAN.H11MO.0.B	Three-zinc finger Krüppel-related factors{2.3.1}
+SP4_HUMAN.H11MO.0.A	Three-zinc finger Krüppel-related factors{2.3.1}
+SP4_HUMAN.H11MO.1.A	Three-zinc finger Krüppel-related factors{2.3.1}
+SPDEF_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+SPI1_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+SPIB_HUMAN.H11MO.0.A	Ets-related factors{3.5.2}
+SPIC_HUMAN.H11MO.0.D	Ets-related factors{3.5.2}
+SPZ1_HUMAN.H11MO.0.D	unknown
+SRBP1_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+SRBP2_HUMAN.H11MO.0.B	bHLH-ZIP factors{1.2.6}
+SRF_HUMAN.H11MO.0.A	Responders to external signals (SRF/RLM1){5.1.2}
+SRY_HUMAN.H11MO.0.B	SOX-related factors{4.1.1}
+STAT1_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STAT1_HUMAN.H11MO.1.A	STAT factors{6.2.1}
+STAT2_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STAT3_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STAT4_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STA5A_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STA5B_HUMAN.H11MO.0.A	STAT factors{6.2.1}
+STAT6_HUMAN.H11MO.0.B	STAT factors{6.2.1}
+TAF1_HUMAN.H11MO.0.A	TCF-7-related factors{4.1.3}
+TAL1_HUMAN.H11MO.0.A	Tal-related factors{1.2.3}
+TAL1_HUMAN.H11MO.1.A	Tal-related factors{1.2.3}
+TBP_HUMAN.H11MO.0.A	TBP-related factors{8.1.1}
+TBR1_HUMAN.H11MO.0.D	TBrain-related factors{6.5.2}
+TBX1_HUMAN.H11MO.0.D	TBX1-related factors{6.5.3}
+TBX15_HUMAN.H11MO.0.D	TBX1-related factors{6.5.3}
+TBX19_HUMAN.H11MO.0.D	Brachyury-related factors{6.5.1}
+TBX2_HUMAN.H11MO.0.D	TBX2-related factors{6.5.4}
+TBX20_HUMAN.H11MO.0.D	TBX1-related factors{6.5.3}
+TBX21_HUMAN.H11MO.0.A	TBrain-related factors{6.5.2}
+TBX3_HUMAN.H11MO.0.C	TBX2-related factors{6.5.4}
+TBX4_HUMAN.H11MO.0.D	TBX2-related factors{6.5.4}
+TBX5_HUMAN.H11MO.0.D	TBX2-related factors{6.5.4}
+BRAC_HUMAN.H11MO.0.A	Brachyury-related factors{6.5.1}
+BRAC_HUMAN.H11MO.1.B	Brachyury-related factors{6.5.1}
+HTF4_HUMAN.H11MO.0.A	E2A-related factors{1.2.1}
+TFE2_HUMAN.H11MO.0.A	E2A-related factors{1.2.1}
+ITF2_HUMAN.H11MO.0.C	E2A-related factors{1.2.1}
+TCF7_HUMAN.H11MO.0.A	TCF-7-related factors{4.1.3}
+TF7L1_HUMAN.H11MO.0.B	TCF-7-related factors{4.1.3}
+TF7L2_HUMAN.H11MO.0.A	TCF-7-related factors{4.1.3}
+TEAD1_HUMAN.H11MO.0.A	TEF-1-related factors{3.6.1}
+TEAD2_HUMAN.H11MO.0.D	TEF-1-related factors{3.6.1}
+TEAD3_HUMAN.H11MO.0.D	TEF-1-related factors{3.6.1}
+TEAD4_HUMAN.H11MO.0.A	TEF-1-related factors{3.6.1}
+TEF_HUMAN.H11MO.0.D	C/EBP-related{1.1.8}
+AP2A_HUMAN.H11MO.0.A	AP-2{1.3.1}
+AP2B_HUMAN.H11MO.0.B	AP-2{1.3.1}
+AP2C_HUMAN.H11MO.0.A	AP-2{1.3.1}
+AP2D_HUMAN.H11MO.0.D	AP-2{1.3.1}
+TFAP4_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+TFCP2_HUMAN.H11MO.0.D	CP2-related factors{6.7.2}
+TFDP1_HUMAN.H11MO.0.C	E2F-related factors{3.3.2}
+TFE3_HUMAN.H11MO.0.B	bHLH-ZIP factors{1.2.6}
+TFEB_HUMAN.H11MO.0.C	bHLH-ZIP factors{1.2.6}
+TGIF1_HUMAN.H11MO.0.A	TALE-type homeo domain factors{3.1.4}
+TGIF2_HUMAN.H11MO.0.D	TALE-type homeo domain factors{3.1.4}
+TF2LX_HUMAN.H11MO.0.D	TALE-type homeo domain factors{3.1.4}
+THAP1_HUMAN.H11MO.0.C	THAP-related factors{2.9.1}
+THA11_HUMAN.H11MO.0.B	THAP-related factors{2.9.1}
+THA_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+THA_HUMAN.H11MO.1.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+THB_HUMAN.H11MO.0.C	Thyroid hormone receptor-related factors (NR1){2.1.2}
+THB_HUMAN.H11MO.1.D	Thyroid hormone receptor-related factors (NR1){2.1.2}
+TLX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+P53_HUMAN.H11MO.0.A	p53-related factors{6.3.1}
+P53_HUMAN.H11MO.1.A	p53-related factors{6.3.1}
+P63_HUMAN.H11MO.0.A	p53-related factors{6.3.1}
+P63_HUMAN.H11MO.1.A	p53-related factors{6.3.1}
+P73_HUMAN.H11MO.0.A	p53-related factors{6.3.1}
+P73_HUMAN.H11MO.1.A	p53-related factors{6.3.1}
+TWST1_HUMAN.H11MO.0.A	Tal-related factors{1.2.3}
+TWST1_HUMAN.H11MO.1.A	Tal-related factors{1.2.3}
+UBIP1_HUMAN.H11MO.0.D	CP2-related factors{6.7.2}
+UNC4_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+USF1_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+USF2_HUMAN.H11MO.0.A	bHLH-ZIP factors{1.2.6}
+VAX1_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+VAX2_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+VDR_HUMAN.H11MO.0.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+VDR_HUMAN.H11MO.1.A	Thyroid hormone receptor-related factors (NR1){2.1.2}
+VENTX_HUMAN.H11MO.0.D	NK-related factors{3.1.2}
+VEZF1_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+VEZF1_HUMAN.H11MO.1.C	Factors with multiple dispersed zinc fingers{2.3.4}
+VSX1_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+VSX2_HUMAN.H11MO.0.D	Paired-related HD factors{3.1.3}
+WT1_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+WT1_HUMAN.H11MO.1.B	More than 3 adjacent zinc finger factors{2.3.3}
+XBP1_HUMAN.H11MO.0.D	XBP-1-related factors{1.1.5}
+TYY1_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+TYY2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZBED1_HUMAN.H11MO.0.D	BED zinc finger factors{2.3.5}
+ZBT14_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZBT17_HUMAN.H11MO.0.A	Factors with multiple dispersed zinc fingers{2.3.4}
+ZBT18_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+KAISO_HUMAN.H11MO.0.A	Other factors with up to three adjacent zinc fingers{2.3.2}
+KAISO_HUMAN.H11MO.1.A	Other factors with up to three adjacent zinc fingers{2.3.2}
+KAISO_HUMAN.H11MO.2.A	Other factors with up to three adjacent zinc fingers{2.3.2}
+ZBTB4_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZBTB4_HUMAN.H11MO.1.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZBT48_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZBT49_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZBTB6_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZBT7A_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZBT7B_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZEB1_HUMAN.H11MO.0.A	HD-ZF factors{3.1.8}
+ZFHX3_HUMAN.H11MO.0.D	HD-ZF factors{3.1.8}
+ZFP28_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZFP42_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZF64A_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZFP82_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZFX_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZFX_HUMAN.H11MO.1.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZIC1_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+ZIC2_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZIC3_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+ZIC4_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZIM3_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZKSC1_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+ZKSC3_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN121_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN134_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN134_HUMAN.H11MO.1.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN136_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN140_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN143_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+OZF_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN148_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZNF18_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN214_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN219_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN232_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN250_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN257_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN260_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN263_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZN263_HUMAN.H11MO.1.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZN264_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN274_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZN281_HUMAN.H11MO.0.A	More than 3 adjacent zinc finger factors{2.3.3}
+ZN282_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN317_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN320_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN322_HUMAN.H11MO.0.B	More than 3 adjacent zinc finger factors{2.3.3}
+Z324A_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN329_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN331_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN333_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN335_HUMAN.H11MO.0.A	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN335_HUMAN.H11MO.1.A	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN341_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN341_HUMAN.H11MO.1.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN350_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN350_HUMAN.H11MO.1.D	More than 3 adjacent zinc finger factors{2.3.3}
+Z354A_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN382_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN384_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN394_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN394_HUMAN.H11MO.1.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZNF41_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZNF41_HUMAN.H11MO.1.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN410_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN418_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN418_HUMAN.H11MO.1.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN423_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN436_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN449_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN467_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN490_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN502_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN524_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN528_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN547_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN549_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN554_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN554_HUMAN.H11MO.1.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN563_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN563_HUMAN.H11MO.1.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN582_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN586_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN589_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN652_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN667_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN680_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN708_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN708_HUMAN.H11MO.1.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN713_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZN740_HUMAN.H11MO.0.D	Other factors with up to three adjacent zinc fingers{2.3.2}
+ZNF76_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN768_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN770_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN770_HUMAN.H11MO.1.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN784_HUMAN.H11MO.0.D	Factors with multiple dispersed zinc fingers{2.3.4}
+ZNF8_HUMAN.H11MO.0.C	Factors with multiple dispersed zinc fingers{2.3.4}
+ZN816_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZN816_HUMAN.H11MO.1.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZNF85_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZNF85_HUMAN.H11MO.1.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZSC16_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+ZSC22_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZSC31_HUMAN.H11MO.0.C	More than 3 adjacent zinc finger factors{2.3.3}
+ZSCA4_HUMAN.H11MO.0.D	More than 3 adjacent zinc finger factors{2.3.3}
+MA0006.1_Ahr::Arnt	PAS domain factors{1.2.5}
+MA0854.1_Alx1	Paired-related HD factors{3.1.3}
+MA0634.1_ALX3	Paired-related HD factors{3.1.3}
+MA0853.1_Alx4	Paired-related HD factors{3.1.3}
+MA0007.3_Ar	Steroid hormone receptors (NR3){2.1.1}
+MA0151.1_Arid3a	ARID-related factors{3.7.1}
+MA0601.1_Arid3b	ARID-related factors{3.7.1}
+MA0602.1_Arid5a	ARID-related factors{3.7.1}
+MA0004.1_Arnt	PAS domain factors{1.2.5}
+MA0259.1_ARNT::HIF1A	PAS domain factors{1.2.5}
+MA0603.1_Arntl	PAS domain factors{1.2.5}
+MA0874.1_Arx	Paired-related HD factors{3.1.3}
+MA1100.1_ASCL1	MyoD / ASC-related factors{1.2.2}
+MA0816.1_Ascl2	MyoD / ASC-related factors{1.2.2}
+MA0604.1_Atf1	CREB-related factors{1.1.7}
+MA0605.1_Atf3	Fos-related factors{1.1.2}
+MA0833.1_ATF4	ATF-4-related factors{1.1.6}
+MA0834.1_ATF7	Jun-related factors{1.1.1}
+MA0461.2_Atoh1	Tal-related factors{1.2.3}
+MA0591.1_Bach1::Mafk	ambiguous
+MA1101.1_BACH2	Jun-related factors{1.1.1}
+MA0877.1_Barhl1	NK-related factors{3.1.2}
+MA0635.1_BARHL2	NK-related factors{3.1.2}
+MA0875.1_BARX1	NK-related factors{3.1.2}
+MA0462.1_BATF::JUN	ambiguous
+MA0835.1_BATF3	B-ATF-related factors{1.1.4}
+MA0463.1_Bcl6	More than 3 adjacent zinc finger factors{2.3.3}
+MA0731.1_BCL6B	More than 3 adjacent zinc finger factors{2.3.3}
+MA0607.1_Bhlha15	Tal-related factors{1.2.3}
+MA0818.1_BHLHE22	Tal-related factors{1.2.3}
+MA0817.1_BHLHE23	Tal-related factors{1.2.3}
+MA0464.2_BHLHE40	Hairy-related factors{1.2.4}
+MA0636.1_BHLHE41	Hairy-related factors{1.2.4}
+MA0876.1_BSX	NK-related factors{3.1.2}
+MA0878.1_CDX1	HOX-related factors{3.1.1}
+MA0465.1_CDX2	HOX-related factors{3.1.1}
+MA0019.1_Ddit3::Cebpa	C/EBP-related{1.1.8}
+MA0102.3_CEBPA	C/EBP-related{1.1.8}
+MA0466.2_CEBPB	C/EBP-related{1.1.8}
+MA0836.1_CEBPD	C/EBP-related{1.1.8}
+MA0837.1_CEBPE	C/EBP-related{1.1.8}
+MA0838.1_CEBPG	C/EBP-related{1.1.8}
+MA0637.1_CENPB	unknown
+MA0819.1_CLOCK	PAS domain factors{1.2.5}
+MA0018.3_CREB1	CREB-related factors{1.1.7}
+MA0638.1_CREB3	CREB-related factors{1.1.7}
+MA0839.1_CREB3L1	CREB-related factors{1.1.7}
+MA0608.1_Creb3l2	CREB-related factors{1.1.7}
+MA0840.1_Creb5	Jun-related factors{1.1.1}
+MA0609.1_Crem	CREB-related factors{1.1.7}
+MA0467.1_Crx	Paired-related HD factors{3.1.3}
+MA0139.1_CTCF	More than 3 adjacent zinc finger factors{2.3.3}
+MA1102.1_CTCFL	More than 3 adjacent zinc finger factors{2.3.3}
+MA0754.1_CUX1	HD-CUT factors{3.1.9}
+MA0755.1_CUX2	HD-CUT factors{3.1.9}
+MA0639.1_DBP	C/EBP-related{1.1.8}
+MA0879.1_Dlx1	NK-related factors{3.1.2}
+MA0885.1_Dlx2	NK-related factors{3.1.2}
+MA0880.1_Dlx3	NK-related factors{3.1.2}
+MA0881.1_Dlx4	NK-related factors{3.1.2}
+MA0882.1_DLX6	NK-related factors{3.1.2}
+MA0883.1_Dmbx1	Paired-related HD factors{3.1.3}
+MA0610.1_DMRT3	DMRT{2.5.1}
+MA0468.1_DUX4	Paired-related HD factors{3.1.3}
+MA0884.1_DUXA	Paired-related HD factors{3.1.3}
+MA0024.3_E2F1	E2F-related factors{3.3.2}
+MA0864.1_E2F2	E2F-related factors{3.3.2}
+MA0469.2_E2F3	E2F-related factors{3.3.2}
+MA0470.1_E2F4	E2F-related factors{3.3.2}
+MA0471.1_E2F6	E2F-related factors{3.3.2}
+MA0758.1_E2F7	E2F-related factors{3.3.2}
+MA0865.1_E2F8	E2F-related factors{3.3.2}
+MA0154.3_EBF1	Early B-Cell Factor-related factors{6.1.5}
+MA0162.3_EGR1	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0472.2_EGR2	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0732.1_EGR3	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0733.1_EGR4	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0598.2_EHF	Ets-related factors{3.5.2}
+MA0473.2_ELF1	Ets-related factors{3.5.2}
+MA0640.1_ELF3	Ets-related factors{3.5.2}
+MA0641.1_ELF4	Ets-related factors{3.5.2}
+MA0136.2_ELF5	Ets-related factors{3.5.2}
+MA0028.2_ELK1	Ets-related factors{3.5.2}
+MA0759.1_ELK3	Ets-related factors{3.5.2}
+MA0076.2_ELK4	Ets-related factors{3.5.2}
+MA0612.1_EMX1	NK-related factors{3.1.2}
+MA0886.1_EMX2	NK-related factors{3.1.2}
+MA0027.2_EN1	NK-related factors{3.1.2}
+MA0642.1_EN2	NK-related factors{3.1.2}
+MA0800.1_EOMES	TBrain-related factors{6.5.2}
+MA0760.1_ERF	Ets-related factors{3.5.2}
+MA0474.2_ERG	Ets-related factors{3.5.2}
+MA0112.3_ESR1	Steroid hormone receptors (NR3){2.1.1}
+MA0258.2_ESR2	Steroid hormone receptors (NR3){2.1.1}
+MA0592.2_Esrra	Steroid hormone receptors (NR3){2.1.1}
+MA0141.3_ESRRB	Steroid hormone receptors (NR3){2.1.1}
+MA0643.1_Esrrg	Steroid hormone receptors (NR3){2.1.1}
+MA0644.1_ESX1	Paired-related HD factors{3.1.3}
+MA0098.3_ETS1	Ets-related factors{3.5.2}
+MA0761.1_ETV1	Ets-related factors{3.5.2}
+MA0762.1_ETV2	Ets-related factors{3.5.2}
+MA0763.1_ETV3	Ets-related factors{3.5.2}
+MA0764.1_ETV4	Ets-related factors{3.5.2}
+MA0765.1_ETV5	Ets-related factors{3.5.2}
+MA0645.1_ETV6	Ets-related factors{3.5.2}
+MA0887.1_EVX1	HOX-related factors{3.1.1}
+MA0888.1_EVX2	HOX-related factors{3.1.1}
+MA0156.2_FEV	Ets-related factors{3.5.2}
+MA0820.1_FIGLA	Tal-related factors{1.2.3}
+MA0149.1_EWSR1-FLI1	Ets-related factors{3.5.2}
+MA0475.2_FLI1	Ets-related factors{3.5.2}
+MA0099.3_FOS::JUN	ambiguous
+MA0476.1_FOS	Fos-related factors{1.1.2}
+MA1126.1_FOS::JUN_var.2	ambiguous
+MA1134.1_FOS::JUNB	ambiguous
+MA1141.1_FOS::JUND	ambiguous
+MA1127.1_FOSB::JUN	ambiguous
+MA1135.1_FOSB::JUNB	ambiguous
+MA1136.1_FOSB::JUNB_var.2	ambiguous
+MA0477.1_FOSL1	Fos-related factors{1.1.2}
+MA1128.1_FOSL1::JUN	ambiguous
+MA1129.1_FOSL1::JUN_var.2	ambiguous
+MA1137.1_FOSL1::JUNB	ambiguous
+MA1142.1_FOSL1::JUND	ambiguous
+MA1143.1_FOSL1::JUND_var.2	ambiguous
+MA0478.1_FOSL2	Fos-related factors{1.1.2}
+MA1130.1_FOSL2::JUN	ambiguous
+MA1131.1_FOSL2::JUN_var.2	ambiguous
+MA1138.1_FOSL2::JUNB	ambiguous
+MA1139.1_FOSL2::JUNB_var.2	ambiguous
+MA1144.1_FOSL2::JUND	ambiguous
+MA1145.1_FOSL2::JUND_var.2	ambiguous
+MA0148.3_FOXA1	Forkhead box (FOX) factors{3.3.1}
+MA0047.2_Foxa2	Forkhead box (FOX) factors{3.3.1}
+MA0845.1_FOXB1	Forkhead box (FOX) factors{3.3.1}
+MA0032.2_FOXC1	Forkhead box (FOX) factors{3.3.1}
+MA0846.1_FOXC2	Forkhead box (FOX) factors{3.3.1}
+MA0031.1_FOXD1	Forkhead box (FOX) factors{3.3.1}
+MA0847.1_FOXD2	Forkhead box (FOX) factors{3.3.1}
+MA0041.1_Foxd3	Forkhead box (FOX) factors{3.3.1}
+MA0030.1_FOXF2	Forkhead box (FOX) factors{3.3.1}
+MA0613.1_FOXG1	Forkhead box (FOX) factors{3.3.1}
+MA0479.1_FOXH1	Forkhead box (FOX) factors{3.3.1}
+MA0042.2_FOXI1	Forkhead box (FOX) factors{3.3.1}
+MA0614.1_Foxj2	Forkhead box (FOX) factors{3.3.1}
+MA0851.1_Foxj3	Forkhead box (FOX) factors{3.3.1}
+MA0852.2_FOXK1	Forkhead box (FOX) factors{3.3.1}
+MA1103.1_FOXK2	Forkhead box (FOX) factors{3.3.1}
+MA0033.2_FOXL1	Forkhead box (FOX) factors{3.3.1}
+MA0480.1_Foxo1	Forkhead box (FOX) factors{3.3.1}
+MA0157.2_FOXO3	Forkhead box (FOX) factors{3.3.1}
+MA0848.1_FOXO4	Forkhead box (FOX) factors{3.3.1}
+MA0849.1_FOXO6	Forkhead box (FOX) factors{3.3.1}
+MA0481.2_FOXP1	Forkhead box (FOX) factors{3.3.1}
+MA0593.1_FOXP2	Forkhead box (FOX) factors{3.3.1}
+MA0850.1_FOXP3	Forkhead box (FOX) factors{3.3.1}
+MA0040.1_Foxq1	Forkhead box (FOX) factors{3.3.1}
+MA0062.2_Gabpa	Ets-related factors{3.5.2}
+MA0035.3_Gata1	GATA-type zinc fingers{2.2.1}
+MA0140.2_GATA1::TAL1	ambiguous
+MA0036.3_GATA2	GATA-type zinc fingers{2.2.1}
+MA0037.3_GATA3	GATA-type zinc fingers{2.2.1}
+MA0482.1_Gata4	GATA-type zinc fingers{2.2.1}
+MA0766.1_GATA5	GATA-type zinc fingers{2.2.1}
+MA1104.1_GATA6	GATA-type zinc fingers{2.2.1}
+MA0889.1_GBX1	HOX-related factors{3.1.1}
+MA0890.1_GBX2	HOX-related factors{3.1.1}
+MA0646.1_GCM1	GCM factors{7.2.1}
+MA0767.1_GCM2	GCM factors{7.2.1}
+MA0038.1_Gfi1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0483.1_Gfi1b	More than 3 adjacent zinc finger factors{2.3.3}
+MA0734.1_GLI2	More than 3 adjacent zinc finger factors{2.3.3}
+MA0735.1_GLIS1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0736.1_GLIS2	More than 3 adjacent zinc finger factors{2.3.3}
+MA0737.1_GLIS3	More than 3 adjacent zinc finger factors{2.3.3}
+MA0615.1_Gmeb1	GMEB{5.3.3}
+MA0862.1_GMEB2	GMEB{5.3.3}
+MA0647.1_GRHL1	Grainyhead-related factors{6.7.1}
+MA1105.1_GRHL2	Grainyhead-related factors{6.7.1}
+MA0648.1_GSC	Paired-related HD factors{3.1.3}
+MA0891.1_GSC2	Paired-related HD factors{3.1.3}
+MA0892.1_GSX1	HOX-related factors{3.1.1}
+MA0893.1_GSX2	HOX-related factors{3.1.1}
+MA0092.1_Hand1::Tcf3	ambiguous
+MA1099.1_Hes1	Hairy-related factors{1.2.4}
+MA0616.1_Hes2	Hairy-related factors{1.2.4}
+MA0821.1_HES5	Hairy-related factors{1.2.4}
+MA0822.1_HES7	Hairy-related factors{1.2.4}
+MA0894.1_HESX1	Paired-related HD factors{3.1.3}
+MA0823.1_HEY1	Hairy-related factors{1.2.4}
+MA0649.1_HEY2	Hairy-related factors{1.2.4}
+MA0739.1_Hic1	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0738.1_HIC2	Factors with multiple dispersed zinc fingers{2.3.4}
+MA1106.1_HIF1A	PAS domain factors{1.2.5}
+MA0131.2_HINFP	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0043.2_HLF	C/EBP-related{1.1.8}
+MA0109.1_HLTF	unknown
+MA0895.1_HMBOX1	POU domain factors{3.1.10}
+MA0896.1_Hmx1	NK-related factors{3.1.2}
+MA0897.1_Hmx2	NK-related factors{3.1.2}
+MA0898.1_Hmx3	NK-related factors{3.1.2}
+MA0046.2_HNF1A	POU domain factors{3.1.10}
+MA0153.2_HNF1B	POU domain factors{3.1.10}
+MA0114.3_Hnf4a	RXR-related receptors (NR2){2.1.3}
+MA0484.1_HNF4G	RXR-related receptors (NR2){2.1.3}
+MA0899.1_HOXA10	HOX-related factors{3.1.1}
+MA0911.1_Hoxa11	HOX-related factors{3.1.1}
+MA0650.1_HOXA13	HOX-related factors{3.1.1}
+MA0900.1_HOXA2	HOX-related factors{3.1.1}
+MA0158.1_HOXA5	HOX-related factors{3.1.1}
+MA0594.1_Hoxa9	HOX-related factors{3.1.1}
+MA0901.1_HOXB13	HOX-related factors{3.1.1}
+MA0902.1_HOXB2	HOX-related factors{3.1.1}
+MA0903.1_HOXB3	HOX-related factors{3.1.1}
+MA0904.1_Hoxb5	HOX-related factors{3.1.1}
+MA0905.1_HOXC10	HOX-related factors{3.1.1}
+MA0651.1_HOXC11	HOX-related factors{3.1.1}
+MA0906.1_HOXC12	HOX-related factors{3.1.1}
+MA0907.1_HOXC13	HOX-related factors{3.1.1}
+MA0485.1_Hoxc9	HOX-related factors{3.1.1}
+MA0908.1_HOXD11	HOX-related factors{3.1.1}
+MA0873.1_HOXD12	HOX-related factors{3.1.1}
+MA0909.1_HOXD13	HOX-related factors{3.1.1}
+MA0912.1_Hoxd3	HOX-related factors{3.1.1}
+MA0910.1_Hoxd8	HOX-related factors{3.1.1}
+MA0913.1_Hoxd9	HOX-related factors{3.1.1}
+MA0486.2_HSF1	HSF factors{3.4.1}
+MA0770.1_HSF2	HSF factors{3.4.1}
+MA0771.1_HSF4	HSF factors{3.4.1}
+MA0617.1_Id2	HLH domain only{1.2.8}
+MA0824.1_ID4	HLH domain only{1.2.8}
+MA0155.1_INSM1	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0050.2_IRF1	Interferon-regulatory factors{3.5.3}
+MA0051.1_IRF2	Interferon-regulatory factors{3.5.3}
+MA1418.1_IRF3	Interferon-regulatory factors{3.5.3}
+MA1419.1_IRF4	Interferon-regulatory factors{3.5.3}
+MA1420.1_IRF5	Interferon-regulatory factors{3.5.3}
+MA0772.1_IRF7	Interferon-regulatory factors{3.5.3}
+MA0652.1_IRF8	Interferon-regulatory factors{3.5.3}
+MA0653.1_IRF9	Interferon-regulatory factors{3.5.3}
+MA0914.1_ISL2	HD-LIM factors{3.1.5}
+MA0654.1_ISX	Paired-related HD factors{3.1.3}
+MA0655.1_JDP2	Fos-related factors{1.1.2}
+MA0656.1_JDP2_var.2	Fos-related factors{1.1.2}
+MA0488.1_JUN	Jun-related factors{1.1.1}
+MA0489.1_JUN_var.2	Jun-related factors{1.1.1}
+MA1132.1_JUN::JUNB	Jun-related factors{1.1.1}
+MA1133.1_JUN::JUNB_var.2	Jun-related factors{1.1.1}
+MA0490.1_JUNB	Jun-related factors{1.1.1}
+MA1140.1_JUNB_var.2	Jun-related factors{1.1.1}
+MA0491.1_JUND	Jun-related factors{1.1.1}
+MA0492.1_JUND_var.2	Jun-related factors{1.1.1}
+MA0493.1_Klf1	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0742.1_Klf12	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0657.1_KLF13	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0740.1_KLF14	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0741.1_KLF16	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0039.3_KLF4	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0599.1_KLF5	Three-zinc finger Krüppel-related factors{2.3.1}
+MA1107.1_KLF9	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0618.1_LBX1	NK-related factors{3.1.2}
+MA0699.1_LBX2	NK-related factors{3.1.2}
+MA0768.1_LEF1	TCF-7-related factors{4.1.3}
+MA0700.1_LHX2	HD-LIM factors{3.1.5}
+MA0135.1_Lhx3	HD-LIM factors{3.1.5}
+MA0704.1_Lhx4	HD-LIM factors{3.1.5}
+MA0658.1_LHX6	HD-LIM factors{3.1.5}
+MA0705.1_Lhx8	HD-LIM factors{3.1.5}
+MA0701.1_LHX9	HD-LIM factors{3.1.5}
+MA0619.1_LIN54	unknown
+MA0702.1_LMX1A	HD-LIM factors{3.1.5}
+MA0703.1_LMX1B	HD-LIM factors{3.1.5}
+MA0501.1_MAF::NFE2	ambiguous
+MA0117.2_Mafb	Maf-related factors{1.1.3}
+MA0495.2_MAFF	Maf-related factors{1.1.3}
+MA0089.1_MAFG::NFE2L1	ambiguous
+MA0659.1_MAFG	Maf-related factors{1.1.3}
+MA0496.2_MAFK	Maf-related factors{1.1.3}
+MA0058.3_MAX	bHLH-ZIP factors{1.2.6}
+MA0059.1_MAX::MYC	bHLH-ZIP factors{1.2.6}
+MA0029.1_Mecom	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0052.3_MEF2A	Regulators of differentiation{5.1.1}
+MA0660.1_MEF2B	Regulators of differentiation{5.1.1}
+MA0497.1_MEF2C	Regulators of differentiation{5.1.1}
+MA0773.1_MEF2D	Regulators of differentiation{5.1.1}
+MA0498.2_MEIS1	TALE-type homeo domain factors{3.1.4}
+MA0774.1_MEIS2	TALE-type homeo domain factors{3.1.4}
+MA0775.1_MEIS3	TALE-type homeo domain factors{3.1.4}
+MA0661.1_MEOX1	HOX-related factors{3.1.1}
+MA0706.1_MEOX2	HOX-related factors{3.1.1}
+MA0801.1_MGA	ambiguous
+MA0620.2_MITF	bHLH-ZIP factors{1.2.6}
+MA0662.1_MIXL1	Paired-related HD factors{3.1.3}
+MA0663.1_MLX	bHLH-ZIP factors{1.2.6}
+MA0622.1_Mlxip	bHLH-ZIP factors{1.2.6}
+MA0664.1_MLXIPL	bHLH-ZIP factors{1.2.6}
+MA0825.1_MNT	bHLH-ZIP factors{1.2.6}
+MA0707.1_MNX1	HOX-related factors{3.1.1}
+MA0665.1_MSC	Tal-related factors{1.2.3}
+MA0666.1_MSX1	NK-related factors{3.1.2}
+MA0708.1_MSX2	NK-related factors{3.1.2}
+MA0863.1_MTF1	More than 3 adjacent zinc finger factors{2.3.3}
+MA1108.1_MXI1	bHLH-ZIP factors{1.2.6}
+MA0100.3_MYB	Myb/SANT domain factors{3.5.1}
+MA0776.1_MYBL1	Myb/SANT domain factors{3.5.1}
+MA0777.1_MYBL2	Myb/SANT domain factors{3.5.1}
+MA0147.3_MYC	bHLH-ZIP factors{1.2.6}
+MA0104.4_MYCN	bHLH-ZIP factors{1.2.6}
+MA0667.1_MYF6	MyoD / ASC-related factors{1.2.2}
+MA0499.1_Myod1	MyoD / ASC-related factors{1.2.2}
+MA0500.1_Myog	MyoD / ASC-related factors{1.2.2}
+MA0056.1_MZF1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0057.1_MZF1_var.2	More than 3 adjacent zinc finger factors{2.3.3}
+MA1109.1_NEUROD1	Tal-related factors{1.2.3}
+MA0668.1_NEUROD2	Tal-related factors{1.2.3}
+MA0623.1_Neurog1	Tal-related factors{1.2.3}
+MA0669.1_NEUROG2	Tal-related factors{1.2.3}
+MA0606.1_NFAT5	NFAT-related factors{6.1.3}
+MA0624.1_NFATC1	NFAT-related factors{6.1.3}
+MA0152.1_NFATC2	NFAT-related factors{6.1.3}
+MA0625.1_NFATC3	NFAT-related factors{6.1.3}
+MA0841.1_NFE2	Jun-related factors{1.1.1}
+MA0150.2_Nfe2l2	Jun-related factors{1.1.1}
+MA0670.1_NFIA	Nuclear factor 1{7.1.2}
+MA0119.1_NFIC::TLX1	ambiguous
+MA0161.2_NFIC	Nuclear factor 1{7.1.2}
+MA0025.1_NFIL3	C/EBP-related{1.1.8}
+MA0671.1_NFIX	Nuclear factor 1{7.1.2}
+MA0105.4_NFKB1	NF-kappaB-related factors{6.1.1}
+MA0778.1_NFKB2	NF-kappaB-related factors{6.1.1}
+MA0060.3_NFYA	Heteromeric CCAAT-binding factors{4.2.1}
+MA0502.1_NFYB	Heteromeric CCAAT-binding factors{4.2.1}
+MA0048.2_NHLH1	Tal-related factors{1.2.3}
+MA0672.1_NKX2-3	NK-related factors{3.1.2}
+MA0063.1_Nkx2-5	NK-related factors{3.1.2}
+MA0503.1_Nkx2-5_var.2	NK-related factors{3.1.2}
+MA0673.1_NKX2-8	NK-related factors{3.1.2}
+MA0124.2_Nkx3-1	NK-related factors{3.1.2}
+MA0122.2_NKX3-2	NK-related factors{3.1.2}
+MA0674.1_NKX6-1	NK-related factors{3.1.2}
+MA0675.1_NKX6-2	NK-related factors{3.1.2}
+MA0125.1_Nobox	Paired-related HD factors{3.1.3}
+MA0710.1_NOTO	NK-related factors{3.1.2}
+MA0626.1_Npas2	PAS domain factors{1.2.5}
+MA0115.1_NR1H2::RXRA	ambiguous
+MA0494.1_Nr1h3::Rxra	ambiguous
+MA1110.1_NR1H4	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA1146.1_NR1A4::RXRA	ambiguous
+MA0504.1_NR2C2	RXR-related receptors (NR2){2.1.3}
+MA0676.1_Nr2e1	RXR-related receptors (NR2){2.1.3}
+MA0164.1_Nr2e3	RXR-related receptors (NR2){2.1.3}
+MA0017.2_NR2F1	RXR-related receptors (NR2){2.1.3}
+MA1111.1_NR2F2	RXR-related receptors (NR2){2.1.3}
+MA0677.1_Nr2f6	RXR-related receptors (NR2){2.1.3}
+MA0728.1_Nr2f6_var.2	RXR-related receptors (NR2){2.1.3}
+MA0113.3_NR3C1	Steroid hormone receptors (NR3){2.1.1}
+MA0727.1_NR3C2	Steroid hormone receptors (NR3){2.1.1}
+MA1112.1_NR4A1	NGFI-B-related receptors (NR4){2.1.4}
+MA0160.1_NR4A2	NGFI-B-related receptors (NR4){2.1.4}
+MA1147.1_NR4A2::RXRA	ambiguous
+MA0505.1_Nr5a2	FTZ-F1-related receptors (NR5){2.1.5}
+MA0506.1_NRF1	NRF{0.0.6}
+MA0842.1_NRL	Maf-related factors{1.1.3}
+MA0826.1_OLIG1	Tal-related factors{1.2.3}
+MA0678.1_OLIG2	Tal-related factors{1.2.3}
+MA0827.1_OLIG3	Tal-related factors{1.2.3}
+MA0679.1_ONECUT1	HD-CUT factors{3.1.9}
+MA0756.1_ONECUT2	HD-CUT factors{3.1.9}
+MA0757.1_ONECUT3	HD-CUT factors{3.1.9}
+MA0711.1_OTX1	Paired-related HD factors{3.1.3}
+MA0712.1_OTX2	Paired-related HD factors{3.1.3}
+MA0779.1_PAX1	Paired domain only{3.2.2}
+MA0067.1_Pax2	Paired domain only{3.2.2}
+MA0780.1_PAX3	Paired plus homeo domain{3.2.1}
+MA0068.2_PAX4	Paired plus homeo domain{3.2.1}
+MA0014.3_PAX5	Paired domain only{3.2.2}
+MA0069.1_Pax6	Paired plus homeo domain{3.2.1}
+MA0680.1_PAX7	Paired plus homeo domain{3.2.1}
+MA0781.1_PAX9	Paired domain only{3.2.2}
+MA0070.1_PBX1	TALE-type homeo domain factors{3.1.4}
+MA1113.1_PBX2	TALE-type homeo domain factors{3.1.4}
+MA1114.1_PBX3	TALE-type homeo domain factors{3.1.4}
+MA0132.2_PDX1	HOX-related factors{3.1.1}
+MA0713.1_PHOX2A	Paired-related HD factors{3.1.3}
+MA0681.1_Phox2b	Paired-related HD factors{3.1.3}
+MA0682.1_Pitx1	Paired-related HD factors{3.1.3}
+MA0714.1_PITX3	Paired-related HD factors{3.1.3}
+MA0782.1_PKNOX1	TALE-type homeo domain factors{3.1.4}
+MA0783.1_PKNOX2	TALE-type homeo domain factors{3.1.4}
+MA0163.1_PLAG1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0784.1_POU1F1	POU domain factors{3.1.10}
+MA0785.1_POU2F1	POU domain factors{3.1.10}
+MA0507.1_POU2F2	POU domain factors{3.1.10}
+MA0627.1_Pou2f3	POU domain factors{3.1.10}
+MA0786.1_POU3F1	POU domain factors{3.1.10}
+MA0787.1_POU3F2	POU domain factors{3.1.10}
+MA0788.1_POU3F3	POU domain factors{3.1.10}
+MA0789.1_POU3F4	POU domain factors{3.1.10}
+MA0790.1_POU4F1	POU domain factors{3.1.10}
+MA0683.1_POU4F2	POU domain factors{3.1.10}
+MA0791.1_POU4F3	POU domain factors{3.1.10}
+MA0142.1_Pou5f1::Sox2	ambiguous
+MA1115.1_POU5F1	POU domain factors{3.1.10}
+MA0792.1_POU5F1B	POU domain factors{3.1.10}
+MA0628.1_POU6F1	POU domain factors{3.1.10}
+MA0793.1_POU6F2	POU domain factors{3.1.10}
+MA1148.1_PPARA::RXRA	ambiguous
+MA0065.2_Pparg::Rxra	ambiguous
+MA0066.1_PPARG	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0508.2_PRDM1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0715.1_PROP1	Paired-related HD factors{3.1.3}
+MA0794.1_PROX1	HD-PROS factors{3.1.7}
+MA0716.1_PRRX1	Paired-related HD factors{3.1.3}
+MA0075.2_Prrx2	Paired-related HD factors{3.1.3}
+MA0159.1_RARA::RXRA	ambiguous
+MA0729.1_RARA	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0730.1_RARA_var.2	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA1149.1_RARA::RXRG	ambiguous
+MA0857.1_Rarb	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0858.1_Rarb_var.2	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0859.1_Rarg	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0860.1_Rarg_var.2	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0718.1_RAX	Paired-related HD factors{3.1.3}
+MA0717.1_RAX2	Paired-related HD factors{3.1.3}
+MA1116.1_RBPJ	CSL-related factors{6.1.4}
+MA0101.1_REL	NF-kappaB-related factors{6.1.1}
+MA0107.1_RELA	NF-kappaB-related factors{6.1.1}
+MA1117.1_RELB	NF-kappaB-related factors{6.1.1}
+MA0138.2_REST	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0509.1_Rfx1	RFX-related factors{3.3.3}
+MA0600.2_RFX2	RFX-related factors{3.3.3}
+MA0798.1_RFX3	RFX-related factors{3.3.3}
+MA0799.1_RFX4	RFX-related factors{3.3.3}
+MA0510.2_RFX5	RFX-related factors{3.3.3}
+MA0719.1_RHOXF1	Paired-related HD factors{3.1.3}
+MA0071.1_RORA	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0072.1_RORA_var.2	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA1150.1_RORB	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA1151.1_RORC	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0073.1_RREB1	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0002.2_RUNX1	Runt-related factors{6.4.1}
+MA0511.2_RUNX2	Runt-related factors{6.4.1}
+MA0684.1_RUNX3	Runt-related factors{6.4.1}
+MA0074.1_RXRA::VDR	ambiguous
+MA0512.2_Rxra	RXR-related receptors (NR2){2.1.3}
+MA0855.1_RXRB	RXR-related receptors (NR2){2.1.3}
+MA0856.1_RXRG	RXR-related receptors (NR2){2.1.3}
+MA0743.1_SCRT1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0744.1_SCRT2	More than 3 adjacent zinc finger factors{2.3.3}
+MA0630.1_SHOX	Paired-related HD factors{3.1.3}
+MA0720.1_Shox2	Paired-related HD factors{3.1.3}
+MA1118.1_SIX1	HD-SINE factors{3.1.6}
+MA1119.1_SIX2	HD-SINE factors{3.1.6}
+MA0631.1_Six3	HD-SINE factors{3.1.6}
+MA0513.1_SMAD2::SMAD3::SMAD4	SMAD factors{7.1.1}
+MA0795.1_SMAD3	SMAD factors{7.1.1}
+MA1153.1_Smad4	SMAD factors{7.1.1}
+MA0745.1_SNAI2	More than 3 adjacent zinc finger factors{2.3.3}
+MA0870.1_Sox1	SOX-related factors{4.1.1}
+MA0442.2_SOX10	SOX-related factors{4.1.1}
+MA0869.1_Sox11	SOX-related factors{4.1.1}
+MA1120.1_SOX13	SOX-related factors{4.1.1}
+MA1152.1_SOX15	SOX-related factors{4.1.1}
+MA0078.1_Sox17	SOX-related factors{4.1.1}
+MA0143.3_Sox2	SOX-related factors{4.1.1}
+MA0866.1_SOX21	SOX-related factors{4.1.1}
+MA0514.1_Sox3	SOX-related factors{4.1.1}
+MA0867.1_SOX4	SOX-related factors{4.1.1}
+MA0087.1_Sox5	SOX-related factors{4.1.1}
+MA0515.1_Sox6	SOX-related factors{4.1.1}
+MA0868.1_SOX8	SOX-related factors{4.1.1}
+MA0077.1_SOX9	SOX-related factors{4.1.1}
+MA0079.3_SP1	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0516.1_SP2	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0746.1_SP3	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0685.1_SP4	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0747.1_SP8	Three-zinc finger Krüppel-related factors{2.3.1}
+MA0686.1_SPDEF	Ets-related factors{3.5.2}
+MA0080.4_SPI1	Ets-related factors{3.5.2}
+MA0081.1_SPIB	Ets-related factors{3.5.2}
+MA0687.1_SPIC	Ets-related factors{3.5.2}
+MA0111.1_Spz1	unknown
+MA0595.1_SREBF1	bHLH-ZIP factors{1.2.6}
+MA0829.1_Srebf1_var.2	bHLH-ZIP factors{1.2.6}
+MA0596.1_SREBF2	bHLH-ZIP factors{1.2.6}
+MA0828.1_SREBF2_var.2	bHLH-ZIP factors{1.2.6}
+MA0083.3_SRF	Responders to external signals (SRF/RLM1){5.1.2}
+MA0084.1_SRY	SOX-related factors{4.1.1}
+MA0137.3_STAT1	STAT factors{6.2.1}
+MA0517.1_STAT1::STAT2	STAT factors{6.2.1}
+MA0144.2_STAT3	STAT factors{6.2.1}
+MA0518.1_Stat4	STAT factors{6.2.1}
+MA0519.1_Stat5a::Stat5b	STAT factors{6.2.1}
+MA0520.1_Stat6	STAT factors{6.2.1}
+MA0091.1_TAL1::TCF3	ambiguous
+MA0108.2_TBP	TBP-related factors{8.1.1}
+MA0802.1_TBR1	TBrain-related factors{6.5.2}
+MA0805.1_TBX1	TBX1-related factors{6.5.3}
+MA0803.1_TBX15	TBX1-related factors{6.5.3}
+MA0804.1_TBX19	Brachyury-related factors{6.5.1}
+MA0688.1_TBX2	TBX2-related factors{6.5.4}
+MA0689.1_TBX20	TBX1-related factors{6.5.3}
+MA0690.1_TBX21	TBrain-related factors{6.5.2}
+MA0806.1_TBX4	TBX2-related factors{6.5.4}
+MA0807.1_TBX5	TBX2-related factors{6.5.4}
+MA0009.2_T	Brachyury-related factors{6.5.1}
+MA0521.1_Tcf12	E2A-related factors{1.2.1}
+MA0832.1_Tcf21	Tal-related factors{1.2.3}
+MA0522.2_TCF3	E2A-related factors{1.2.1}
+MA0830.1_TCF4	E2A-related factors{1.2.1}
+MA0769.1_Tcf7	TCF-7-related factors{4.1.3}
+MA1421.1_TCF7L1	TCF-7-related factors{4.1.3}
+MA0523.1_TCF7L2	TCF-7-related factors{4.1.3}
+MA0632.1_Tcfl5	PAS domain factors{1.2.5}
+MA0090.2_TEAD1	TEF-1-related factors{3.6.1}
+MA1121.1_TEAD2	TEF-1-related factors{3.6.1}
+MA0808.1_TEAD3	TEF-1-related factors{3.6.1}
+MA0809.1_TEAD4	TEF-1-related factors{3.6.1}
+MA0843.1_TEF	C/EBP-related{1.1.8}
+MA0003.3_TFAP2A	AP-2{1.3.1}
+MA0810.1_TFAP2A_var.2	AP-2{1.3.1}
+MA0872.1_TFAP2A_var.3	AP-2{1.3.1}
+MA0811.1_TFAP2B	AP-2{1.3.1}
+MA0812.1_TFAP2B_var.2	AP-2{1.3.1}
+MA0813.1_TFAP2B_var.3	AP-2{1.3.1}
+MA0524.2_TFAP2C	AP-2{1.3.1}
+MA0814.1_TFAP2C_var.2	AP-2{1.3.1}
+MA0815.1_TFAP2C_var.3	AP-2{1.3.1}
+MA0691.1_TFAP4	bHLH-ZIP factors{1.2.6}
+MA0145.3_TFCP2	CP2-related factors{6.7.2}
+MA1122.1_TFDP1	E2F-related factors{3.3.2}
+MA0831.2_TFE3	bHLH-ZIP factors{1.2.6}
+MA0692.1_TFEB	bHLH-ZIP factors{1.2.6}
+MA0871.1_TFEC	bHLH-ZIP factors{1.2.6}
+MA0796.1_TGIF1	TALE-type homeo domain factors{3.1.4}
+MA0797.1_TGIF2	TALE-type homeo domain factors{3.1.4}
+MA0597.1_THAP1	THAP-related factors{2.9.1}
+MA0106.3_TP53	p53-related factors{6.3.1}
+MA0525.2_TP63	p53-related factors{6.3.1}
+MA0861.1_TP73	p53-related factors{6.3.1}
+MA1123.1_TWIST1	Tal-related factors{1.2.3}
+MA0633.1_Twist2	Tal-related factors{1.2.3}
+MA0721.1_UNCX	Paired-related HD factors{3.1.3}
+MA0093.2_USF1	bHLH-ZIP factors{1.2.6}
+MA0526.2_USF2	bHLH-ZIP factors{1.2.6}
+MA0722.1_VAX1	NK-related factors{3.1.2}
+MA0723.1_VAX2	NK-related factors{3.1.2}
+MA0693.2_VDR	Thyroid hormone receptor-related factors (NR1){2.1.2}
+MA0724.1_VENTX	NK-related factors{3.1.2}
+MA0725.1_VSX1	Paired-related HD factors{3.1.3}
+MA0726.1_VSX2	Paired-related HD factors{3.1.3}
+MA0844.1_XBP1	XBP-1-related factors{1.1.5}
+MA0095.2_YY1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0748.1_YY2	More than 3 adjacent zinc finger factors{2.3.3}
+MA0749.1_ZBED1	BED zinc finger factors{2.3.5}
+MA0698.1_ZBTB18	More than 3 adjacent zinc finger factors{2.3.3}
+MA0527.1_ZBTB33	Other factors with up to three adjacent zinc fingers{2.3.2}
+MA0750.2_ZBTB7A	More than 3 adjacent zinc finger factors{2.3.3}
+MA0694.1_ZBTB7B	More than 3 adjacent zinc finger factors{2.3.3}
+MA0695.1_ZBTB7C	More than 3 adjacent zinc finger factors{2.3.3}
+MA0103.3_ZEB1	HD-ZF factors{3.1.8}
+MA0146.2_Zfx	More than 3 adjacent zinc finger factors{2.3.3}
+MA0696.1_ZIC1	More than 3 adjacent zinc finger factors{2.3.3}
+MA0697.1_ZIC3	More than 3 adjacent zinc finger factors{2.3.3}
+MA0751.1_ZIC4	More than 3 adjacent zinc finger factors{2.3.3}
+MA0088.2_ZNF143	More than 3 adjacent zinc finger factors{2.3.3}
+MA1124.1_ZNF24	More than 3 adjacent zinc finger factors{2.3.3}
+MA0528.1_ZNF263	More than 3 adjacent zinc finger factors{2.3.3}
+MA1154.1_ZNF282	More than 3 adjacent zinc finger factors{2.3.3}
+MA0130.1_ZNF354C	More than 3 adjacent zinc finger factors{2.3.3}
+MA1125.1_ZNF384	More than 3 adjacent zinc finger factors{2.3.3}
+MA0752.1_ZNF410	More than 3 adjacent zinc finger factors{2.3.3}
+MA0116.1_Znf423	Factors with multiple dispersed zinc fingers{2.3.4}
+MA0753.1_ZNF740	Other factors with up to three adjacent zinc fingers{2.3.2}
+MA1155.1_ZSCAN4	More than 3 adjacent zinc finger factors{2.3.3}
