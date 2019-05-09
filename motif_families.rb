@@ -4,17 +4,19 @@ TFCLASS_LEVELS = [:tf_superclass, :tf_class, :tf_family, :tf_subfamily, :tf_genu
 tfclass_level = Integer(ARGV[0])
 tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 
-motif_tfs = [
+motif_tf_pairs = [
   'source_data/hocomoco_genes2mat.txt',
   'source_data/jaspar_genes2mat.txt',
 ].flat_map{|fn|
   File.readlines(fn).map{|l|
     l.split("\t").map(&:strip)
   }
-}.group_by{|tf, motif|
+}
+
+motif_tfs = motif_tf_pairs.group_by{|tf, motif|
   motif
 }.map{|motif, pairs|
-  [motif, pairs.map(&:first)]
+  [motif, pairs.map{|tf, motif| tf }]
 }
 
 tf_infos = File.readlines('all_tf_infos.json').map{|l|
