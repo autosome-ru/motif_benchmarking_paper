@@ -5,8 +5,8 @@ tfclass_level = Integer(ARGV[0])
 tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 
 motif_tf_pairs = [
-  'source_data/hocomoco_genes2mat.txt',
-  'source_data/jaspar_genes2mat.txt',
+  'source_data/motifs/hocomoco_genes2mat.txt',
+  'source_data/motifs/jaspar_genes2mat.txt',
 ].flat_map{|fn|
   File.readlines(fn).map{|l|
     l.split("\t").map(&:strip)

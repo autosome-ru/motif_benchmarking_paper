@@ -55,9 +55,9 @@ def request_uniprot_data_by_uniprot_ac(uniprot_ac)
 end
 
 all_tf_names = [
-  'source_data/hocomoco_genes2mat.txt',
-  'source_data/jaspar_genes2mat.txt',
-  'source_data/remap_genes2exp.txt'
+  'source_data/motifs/hocomoco_genes2mat.txt',
+  'source_data/motifs/jaspar_genes2mat.txt',
+  'source_data/chipseq/remap_genes2exp.txt'
 ].flat_map{|fn|
   File.readlines(fn).map{|l|
     l.split("\t")[0].strip
