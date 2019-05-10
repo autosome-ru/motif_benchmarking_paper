@@ -77,7 +77,7 @@ draw_sankey = function(graph) {
 			'Tryptophan cluster factors{3.5}', // ETS-s are here
 
 			'Three-zinc finger Kruppel-related factors{2.3.1}',
-			'More than 3 adjacent zinc finger factors{2.3.3}',
+			'Factors with multiple dispersed zinc fingers{2.3.4}',
 			'Forkhead box (FOX) factors{3.3.1}', // FOX-s are here
 			'Ets-related factors{3.5.2}', // ETS-s are here
 		],

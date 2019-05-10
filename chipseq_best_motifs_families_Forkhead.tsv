@@ -1,0 +1,15 @@
+experiment_TF	experiment_TF_family	best_motif	best_auc	tfs_of_best_motif	best_motifs_family
+ARID1B	ARID-related factors{3.7.1}	MA0470.1_E2F4	0.5613	E2F4	E2F-related factors{3.3.2}
+E2F1	E2F-related factors{3.3.2}	MA0470.1_E2F4	0.7764316666666667	E2F4	E2F-related factors{3.3.2}
+E2F4	E2F-related factors{3.3.2}	MA0470.1_E2F4	0.80492	E2F4	E2F-related factors{3.3.2}
+E2F6	E2F-related factors{3.3.2}	MA0470.1_E2F4	0.743532	E2F4	E2F-related factors{3.3.2}
+FOXA1	Forkhead box (FOX) factors{3.3.1}	FOXA2_HUMAN.H11MO.0.A	0.9229331081081081	FOXA2	Forkhead box (FOX) factors{3.3.1}
+FOXA2	Forkhead box (FOX) factors{3.3.1}	FOXA2_HUMAN.H11MO.0.A	0.9430642857142857	FOXA2	Forkhead box (FOX) factors{3.3.1}
+FOXK2	Forkhead box (FOX) factors{3.3.1}	MA0852.2_FOXK1	0.8130799999999999	FOXK1	Forkhead box (FOX) factors{3.3.1}
+FOXO1	Forkhead box (FOX) factors{3.3.1}	FOXO3_HUMAN.H11MO.0.B	0.7991699999999999	FOXO3	Forkhead box (FOX) factors{3.3.1}
+FOXP1	Forkhead box (FOX) factors{3.3.1}	MA0847.1_FOXD2	0.718104	FOXD2	Forkhead box (FOX) factors{3.3.1}
+FOXP2	Forkhead box (FOX) factors{3.3.1}	FOXP2_HUMAN.H11MO.0.C	0.75416	FOXP2	Forkhead box (FOX) factors{3.3.1}
+HHEX	NK-related factors{3.1.2}	FOXA2_HUMAN.H11MO.0.A	0.87111	FOXA2	Forkhead box (FOX) factors{3.3.1}
+MYBL2	Myb/SANT domain factors{3.5.1}	FOXA2_HUMAN.H11MO.0.A	0.73758	FOXA2	Forkhead box (FOX) factors{3.3.1}
+RFX5	RFX-related factors{3.3.3}	RFX5_HUMAN.H11MO.0.A	0.8218316666666666	RFX5	RFX-related factors{3.3.3}
+TFDP1	E2F-related factors{3.3.2}	MA0470.1_E2F4	0.664925	E2F4	E2F-related factors{3.3.2}
