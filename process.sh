@@ -12,3 +12,6 @@ ruby motif_families.rb 2 > motif_classes.tsv
 ruby motif_families.rb 3 > motif_families.tsv
 ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  source_data/chipseq/remap_genes2exp.txt  2 > chipseq_best_motifs_with_classes.tsv
 ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  source_data/chipseq/remap_genes2exp.txt  3 > chipseq_best_motifs_with_families.tsv
+
+ruby family_aggregator.rb chipseq_best_motifs_with_classes.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_classes_aggregated.tsv
+# ruby family_aggregator.rb chipseq_best_motifs_with_families.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_families_aggregated.tsv
