@@ -39,11 +39,6 @@ def tf_by_experiment(experiment)
 end
 
 aucs = Aucs.from_file(aucs_matrix_fn)
-# aucs_unfiltered = Aucs.from_file(aucs_matrix_fn)
-# aucs_by_motif_filtered = aucs_unfiltered.aucs_by_motif.reject{|motif,aucs|
-#   ["EVX1_HUMAN.H11MO.0.D", "EVX2_HUMAN.H11MO.0.A", "NFKB1_HUMAN.H11MO.0.A"].include?(motif)
-# }
-# aucs = Aucs.new(aucs_unfiltered.experiments, aucs_by_motif_filtered)
 
 header = ['experiment_TF', 'experiment_TF_family', 'best_motif', 'best_auc', 'tfs_of_best_motif', 'best_motifs_family']
 puts header.join("\t")
