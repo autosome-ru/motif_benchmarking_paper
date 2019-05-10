@@ -7,11 +7,6 @@ var uniq = function(collection) {
 	return [...new Set(collection)];
 };
 
-var url_string = window.location.href;
-var url = new URL(url_string);
-var tsv_fn = url.searchParams.get("tsv");
-data = d3.tsv(tsv_fn, d3.autoType);
-
 tfclass_id = function(str){
 	var from = str.indexOf('{');
 	var to = str.indexOf('}');
@@ -32,10 +27,9 @@ tfclass_comparator = function(a, b) {
 	return 0;
 }
 
-prepare_families_graph = function(data) {
+prepare_families_graph = function(data, key_from, key_to) {
 	var fam2fam = data.map(function(row){
-		// return {from: row['tfs_of_best_motif'], to: row['experiment_TF_family']};
-		return {from: row['best_motifs_family'], to: row['experiment_TF_family']};
+		return {from: row[key_from], to: row[key_to]};
 	});
 	fam_counts = count_elements(fam2fam.map(o => [o.from, o.to]).flat());
 	fams = Object.keys(fam_counts);
@@ -66,8 +60,14 @@ prepare_families_graph = function(data) {
 	return graph;
 }
 
-draw_sankey = function(graph) {
-	var width = 1200, height = 650;
+draw_sankey = function(graph, colorize_by, width, height) {
+	var tfs_by_family = {
+		kruppel: ['EGR1', 'EGR2', 'EGR3', 'EGR4', 'KLF12', 'KLF13', 'KLF14', 'KLF15', 'KLF16', 'KLF1', 'KLF3', 'KLF4', 'KLF5', 'KLF6', 'KLF8', 'KLF9', 'SP1', 'SP2', 'SP3', 'SP4', 'SP8'],
+		dispersed_zinc: ['BCL11A', 'E4F1', 'HIC1', 'HIC2', 'HINFP', 'HIVEP1', 'HIVEP2', 'IKZF1', 'INSM1', 'MAZ', 'MECOM', 'PATZ1', 'PRDM4', 'REST', 'RREB1', 'SALL4', 'VEZF1', 'ZBTB17', 'ZBTB4', 'ZNF134', 'ZNF219', 'ZNF335', 'ZNF341', 'ZNF382', 'ZNF418', 'ZNF423', 'ZNF467', 'ZNF770', 'ZNF784', 'ZNF8'],
+		fox: ['FOXA1', 'FOXA2', 'FOXA3', 'FOXB1', 'FOXC1', 'FOXC2', 'FOXD1', 'FOXD2', 'FOXD3', 'FOXF1', 'FOXF2', 'FOXG1', 'FOXH1', 'FOXI1', 'FOXJ2', 'FOXJ3', 'FOXK1', 'FOXK2', 'FOXL1', 'FOXM1', 'FOXO1', 'FOXO3', 'FOXO4', 'FOXO6', 'FOXP1', 'FOXP2', 'FOXP3', 'FOXQ1'],
+		ets: ['EHF', 'ELF1', 'ELF2', 'ELF3', 'ELF4', 'ELF5', 'ELK1', 'ELK3', 'ELK4', 'ERF', 'ERG', 'ETS1', 'ETS2', 'ETV1', 'ETV2', 'ETV3', 'ETV4', 'ETV5', 'ETV6', 'ETV7', 'FEV', 'FLI1', 'GABPA', 'SPDEF', 'SPI1', 'SPIB', 'SPIC'],
+	};
+
 	var color = d3.scaleOrdinal(
 		// ["other", "unknown"],
 		// ["#AAAAAA","#4D4D4D","#F15854","#FAA43A","#e5d00d","#60BD68","#5DA5DA","#F17CB0","#975597","#B2912F",]
@@ -76,22 +76,29 @@ draw_sankey = function(graph) {
 			'Fork head / winged helix factors{3.3}', // FOX-s are here
 			'Tryptophan cluster factors{3.5}', // ETS-s are here
 
-			'Three-zinc finger Kruppel-related factors{2.3.1}',
-			'Factors with multiple dispersed zinc fingers{2.3.4}',
-			'Forkhead box (FOX) factors{3.3.1}', // FOX-s are here
-			'Ets-related factors{3.5.2}', // ETS-s are here
+			'Three-zinc finger Kruppel-related factors{2.3.1}', ...tfs_by_family['kruppel'],
+			'Factors with multiple dispersed zinc fingers{2.3.4}', ...tfs_by_family['dispersed_zinc'],
+			'Forkhead box (FOX) factors{3.3.1}', ...tfs_by_family['fox'], // FOX-s are here
+			'Ets-related factors{3.5.2}', ...tfs_by_family['ets'], // ETS-s are here
 		],
 		[
 			'#F15854',
 			'#60BD68',
 			'#5DA5DA',
 
-			'#faa43a',
-			'#F15854',
-			'#60BD68',
-			'#5DA5DA',
+			...Array(1 + tfs_by_family['kruppel'].length).fill('#faa43a'),
+			...Array(1 + tfs_by_family['dispersed_zinc'].length).fill('#F10854'),
+			...Array(1 + tfs_by_family['fox'].length).fill('#60BD68'),
+			...Array(1 + tfs_by_family['ets'].length).fill('#5DA5DA'),
 		]
 	).unknown("#DDDDDD");
+
+	var color_idx = 0;
+	if (colorize_by == 'from') {
+		color_idx = 0;
+	} else if (colorize_by == 'to') {
+		color_idx = 1;
+	}
 
 	sankey = d3.sankey()
 	    .nodeSort(null)
@@ -126,8 +133,7 @@ draw_sankey = function(graph) {
 	.data(graph.links)
 	.join("path")
 	  .attr("d", d3.sankeyLinkHorizontal())
-	  .attr("stroke", d => color(d.names[0].replace('\u00FC', 'u') )) // Krüppel --> Kruppel
-	  // .attr("stroke", d => color(d.names[1].replace('\u00FC', 'u') )) // Krüppel --> Kruppel
+	  .attr("stroke", d => color(d.names[color_idx].replace('\u00FC', 'u') )) // Krüppel --> Kruppel
 	  .attr("stroke-width", d => d.width)
 	  .style("mix-blend-mode", "multiply")
 	.append("title")
@@ -178,9 +184,3 @@ add_export_button = function() {
 	link_elem.appendChild(link_content);
 	document.body.appendChild(link_elem);
 }
-
-data.then(function(data){
-	graph = prepare_families_graph(data);
-	draw_sankey(graph);
-	add_export_button();
-});
