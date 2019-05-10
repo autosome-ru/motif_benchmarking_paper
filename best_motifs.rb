@@ -1,5 +1,7 @@
 require 'json'
 require_relative 'aucs'
+require_relative 'tf_motifs_mapping'
+
 TFCLASS_LEVELS = [:tf_superclass, :tf_class, :tf_family, :tf_subfamily, :tf_genus, :tf_molecular_species]
 
 class Array
@@ -30,49 +32,10 @@ experiment_mapping_fn = ARGV[1]
 tfclass_level = Integer(ARGV[2])
 tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 
-motif_tf_pairs = [
-  'source_data/motifs/hocomoco_genes2mat.txt',
-  'source_data/motifs/jaspar_genes2mat.txt',
-].flat_map{|fn|
-  File.readlines(fn).map{|l|
-    l.split("\t").map(&:strip)
-  }
-}
-
-motif_tfs = motif_tf_pairs.group_by{|tf, motif|
-  motif
-}.map{|motif, pairs|
-  [motif, pairs.map{|tf, motif| tf }]
-}
-
-tf_motifs = motif_tf_pairs.group_by{|tf, motif|
-  tf
-}.map{|tf, pairs|
-  [tf, pairs.map{|tf, motif| motif }]
-}
-
-tf_infos = File.readlines('all_tf_infos.json').map{|l|
-  JSON.parse(l, symbolize_names: true)
-}
-
-TF_INFO_BY_NAME = tf_infos.group_by{|info|
-  info[:tf_gene_name]
-}.map{|k,vs|
-  [k, vs.first]
-}.to_h
-
-
-TFS_BY_MOTIF = motif_tfs.to_h
-MOTIFS_BY_TF = tf_motifs.to_h
 EXPERIMENT_BY_TF = File.readlines(experiment_mapping_fn).map{|l| l.chomp.split("\t").reverse }.to_h
-
 
 def tf_by_experiment(experiment)
   EXPERIMENT_BY_TF[experiment]
-end
-
-def motif_tf(motif)
-  TF_BY_MOTIF[motif]
 end
 
 aucs = Aucs.from_file(aucs_matrix_fn)
