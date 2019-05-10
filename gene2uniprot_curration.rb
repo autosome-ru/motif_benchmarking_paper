@@ -41,6 +41,14 @@ MANUALLY_CURRATED_UNIPROT_AC = {
   'RAX'   => "Q9Y2V3",
   'SP1'   => "P08047",
   'STAG1' => "Q8WVM7",
+  # TFs from SELEX
+  'CART1'   => 'Q15699', # it's ALX1_HUMAN (Q15699), not TRAF4_HUMAN (Q9BUZ4)
+  'HINFP1'  => 'Q9BQA5', # HINFP_HUMAN
+  'MSX3'    => 'P70354', # MSX3_MOUSE
+  'RHOX11'  => 'Q810N8', # Q810N8_MOUSE, Reproductive homeobox 11
+  'TCFAP2A' => 'P34056', # AP2A_MOUSE
+  'ZFP652'  => 'Q5DU09', # ZN652_MOUSE
+  'ZFP740'  => 'Q6NZQ6', # ZN740_MOUSE
 }
 
 #####################################
