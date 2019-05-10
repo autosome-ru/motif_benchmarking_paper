@@ -1,3 +1,5 @@
+require 'json'
+
 motif_tf_pairs = [
   'source_data/motifs/hocomoco_genes2mat.txt',
   'source_data/motifs/jaspar_genes2mat.txt',
@@ -19,6 +21,11 @@ tf_motifs = motif_tf_pairs.group_by{|tf, motif|
   [tf, pairs.map{|tf, motif| motif }]
 }
 
+TFS_BY_MOTIF = motif_tfs.to_h
+MOTIFS_BY_TF = tf_motifs.to_h
+
+#####################
+
 tf_infos = File.readlines('all_tf_infos.json').map{|l|
   JSON.parse(l, symbolize_names: true)
 }
@@ -29,10 +36,15 @@ TF_INFO_BY_NAME = tf_infos.group_by{|info|
   [k, vs.first]
 }.to_h
 
+#####################
 
-TFS_BY_MOTIF = motif_tfs.to_h
-MOTIFS_BY_TF = tf_motifs.to_h
+experiment_tf_pairs = [
+  'source_data/chipseq/remap_genes2exp.txt',
+  'source_data/selex/jolma13_genes2exp.txt',
+].flat_map{|experiment_mapping_fn|
+  File.readlines(experiment_mapping_fn).map{|l|
+    l.chomp.split("\t").first(2).reverse
+  }
+}
 
-def motif_tf(motif)
-  TF_BY_MOTIF[motif]
-end
+TF_BY_EXPERIMENT = experiment_tf_pairs.to_h

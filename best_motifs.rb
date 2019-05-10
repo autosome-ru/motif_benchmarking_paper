@@ -28,22 +28,15 @@ def certain_or_ambiguous(values)
 end
 
 aucs_matrix_fn = ARGV[0]
-experiment_mapping_fn = ARGV[1]
-tfclass_level = Integer(ARGV[2])
+tfclass_level = Integer(ARGV[1])
 tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
-
-EXPERIMENT_BY_TF = File.readlines(experiment_mapping_fn).map{|l| l.chomp.split("\t").reverse }.to_h
-
-def tf_by_experiment(experiment)
-  EXPERIMENT_BY_TF[experiment]
-end
 
 aucs = Aucs.from_file(aucs_matrix_fn)
 
 header = ['experiment_TF', 'experiment_TF_family', 'best_motif', 'best_auc', 'tfs_of_best_motif', 'best_motifs_family']
 puts header.join("\t")
 aucs.experiments.group_by{|experiment|
-  tf_by_experiment(experiment)
+  TF_BY_EXPERIMENT[experiment]
 }.each{|experiment_tf, experiments|
   # For each motif we aggregate AUCs over several datasets of an experiment TF
   # We calculate it for all motifs of all TFs, not only an experiment TF
