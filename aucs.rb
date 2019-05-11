@@ -8,6 +8,11 @@ class Aucs
   def motifs; @aucs_by_motif.keys; end
   def auc(motif, experiment); @aucs_by_motif[motif][ @experiment_index[experiment] ]; end
   def motif_aucs(motif); @experiments.zip(@aucs_by_motif[motif]).to_h; end
+  def motif_aucs_across_experiments(motif, experiments_subset)
+    experiments_subset.map{|experiment|
+      [experiment, auc(motif, experiment)]
+    }.to_h
+  end
   def experiment_aucs(experiment); motifs.map{|motif| [motif, auc(motif, experiment)] }.to_h; end
   def self.from_file(fn)
     File.open(fn){|f|

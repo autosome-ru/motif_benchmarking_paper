@@ -15,53 +15,31 @@ class Array
   end
 end
 
-aucs = Aucs.from_file('source_data/chipseq/motifs_vs_remap.tsv')
+AUCS = Aucs.from_file('source_data/chipseq/motifs_vs_remap.tsv')
 
-experiments_by_family = aucs.experiments.select{|exp|
-  tf = TF_BY_EXPERIMENT[exp]
-  TF_INFO_BY_NAME[tf][:tf_family].size == 1
-}.group_by{|exp|
-  tf = TF_BY_EXPERIMENT[exp]
-  TF_INFO_BY_NAME[tf][:tf_family].first
-}
+families = TF_INFO_BY_NAME.flat_map{|tf, tf_infos|
+  tf_infos[:tf_family]
+}.uniq
 
-motifs_by_family = aucs.motifs.reject{|motif|
-  TFS_BY_MOTIF[motif].size != 1
-}.group_by{|motif|
-  tf = TFS_BY_MOTIF[motif].first
-  TF_INFO_BY_NAME[tf][:tf_family].first
-}.to_h
-
-aucs_by_family = motifs_by_family.map{|family, motifs|
-  experiments = experiments_by_family[family] || []
-  auc_vals = motifs.flat_map{|motif|
-    experiments.map{|experiment|
-      aucs.auc(motif, experiment)
-    }
+EXPERIMENTS_BY_FAMILY = families.map{|family|
+  experiments = AUCS.experiments.select{|exp|
+    tf = TF_BY_EXPERIMENT[exp]
+    TF_INFO_BY_NAME[tf][:tf_family].include?(family)
   }
-  [family, auc_vals]
+  [family, experiments]
 }.to_h
 
-best_motif_by_family = motifs_by_family.map{|family, motifs|
-  experiments = experiments_by_family[family] || []
-  motif, auc_vals = motifs.map{|motif|
-    vals = experiments.map{|experiment|
-      aucs.auc(motif, experiment)
-    }
-    [motif, vals]
-  }.max_by{|motif, vals|
-    vals.mean
+MOTIFS_BY_FAMILY = families.map{|family|
+  motifs = AUCS.motifs.select{|motif|
+    tfs = TFS_BY_MOTIF[motif]
+    tfs.flat_map{|tf|
+      TF_INFO_BY_NAME[tf][:tf_family]
+    }.include?(family)
   }
-  [family, motif]
+  [family, motifs]
 }.to_h
 
-best_motif_aucs_by_family = best_motif_by_family.map{|family, motif|
-  experiments = experiments_by_family[family] || []
-  motif_aucs = experiments.map{|experiment|
-    aucs.auc(motif, experiment)
-  }
-  [family, motif_aucs]
-}.to_h
+#######################
 
 representative_motifs = File.readlines('source_data/motifs/hocomoco_cluster_list_192.txt').map{|l|
   l.chomp.split("\t").first
@@ -69,30 +47,71 @@ representative_motifs = File.readlines('source_data/motifs/hocomoco_cluster_list
   ['NFKB1_HUMAN.H11MO.0.A', 'EVX1_HUMAN.H11MO.0.D', 'EVX2_HUMAN.H11MO.0.A'].include?(motif)
 }
 
-representative_motifs_by_family = representative_motifs.select{|motif|
-  tfs = TFS_BY_MOTIF[motif] || []
-  fams = tfs.flat_map{|tf|
-    TF_INFO_BY_NAME[tf][:tf_family]
-  }.uniq
-  fams.size == 1
-}.group_by{|motif|
-  tfs = TFS_BY_MOTIF[motif] || []
-  fams = tfs.flat_map{|tf|
-    TF_INFO_BY_NAME[tf][:tf_family]
-  }.uniq
-  fams.first
-}
+REPRESENTATIVE_MOTIFS_BY_FAMILY = families.map{|family|
+  motifs = representative_motifs.select{|motif|
+    tfs = TFS_BY_MOTIF[motif]
+    tfs.flat_map{|tf|
+      TF_INFO_BY_NAME[tf][:tf_family]
+    }.include?(family)
+  }
+  [family, motifs]
+}.to_h
 
-representative_motifs_aucs_by_family = representative_motifs_by_family.map{|family, motifs|
-  experiments = experiments_by_family[family] || []
-  motifs_aucs = motifs.map{|motif|
-    motif_aucs = experiments.map{|experiment|
-      aucs.auc(motif, experiment)
-    }
-    [motif, motif_aucs]
+#######################
+
+def aucs_over_family_datasets(motifs, family)
+  experiments = EXPERIMENTS_BY_FAMILY[family] || []
+  motifs.compact.flat_map{|motif|
+    AUCS.motif_aucs_across_experiments(motif, experiments).values
+  }
+end
+
+#######################
+
+all_aucs_by_family = MOTIFS_BY_FAMILY.map{|family, motifs|
+  [family, aucs_over_family_datasets(motifs, family)]
+}.to_h
+
+#######################
+
+best_motif_by_family_in_family = families.map{|family|
+  motif_aucs_pairs = MOTIFS_BY_FAMILY[family].map{|motif|
+    [motif, aucs_over_family_datasets([motif], family)]
+  }
+  motif, auc_vals = motif_aucs_pairs.max_by{|motif, aucs| aucs.mean }
+  [family, motif]
+}.to_h
+
+best_motif_aucs_by_family_in_family = families.map{|family|
+  best_motif = best_motif_by_family_in_family[family]
+  [family, aucs_over_family_datasets([best_motif], family)]
+}.to_h
+
+#######################
+
+best_motif_by_family_overall = families.map{|family|
+  motif_aucs_pairs = AUCS.motifs.map{|motif|
+    [motif, aucs_over_family_datasets([motif], family)]
+  }
+  motif, auc_vals = motif_aucs_pairs.max_by{|motif, aucs| aucs.mean }
+  [family, motif]
+}.to_h
+
+best_motif_aucs_by_family_overall = families.map{|family|
+  best_motif = best_motif_by_family_overall[family]
+  [family, aucs_over_family_datasets([best_motif], family)]
+}.to_h
+
+#######################
+
+representative_motifs_aucs_by_family = families.map{|family|
+  motifs_aucs = REPRESENTATIVE_MOTIFS_BY_FAMILY[family].map{|motif|
+    [motif, aucs_over_family_datasets([motif], family)]
   }.to_h
   [family, motifs_aucs]
 }.to_h
+
+#######################
 
 aucs_infos_by_family = [
   'Ets-related factors{3.5.2}',
@@ -101,8 +120,9 @@ aucs_infos_by_family = [
   'Forkhead box (FOX) factors{3.3.1}',
 ].map{|family|
   infos = {
-    all: aucs_by_family[family],
-    best: best_motif_aucs_by_family[family],
+    all: all_aucs_by_family[family],
+    best_in_family: best_motif_aucs_by_family_in_family[family],
+    best_overall: best_motif_aucs_by_family_overall[family],
     representatives: representative_motifs_aucs_by_family[family],
   }
   [family, infos]
@@ -116,7 +136,8 @@ File.open('auc_infos_by_family.tsv', 'w') {|fw|
   aucs_infos_by_family.flat_map{|family, family_infos|
     rows = []
     rows += family_infos[:all].map{|auc| [family, 'all', auc] }
-    rows += family_infos[:best].map{|auc| [family, 'best', auc] }
+    rows += family_infos[:best_in_family].map{|auc| [family, 'best_in_family', auc] }
+    rows += family_infos[:best_overall].map{|auc| [family, 'best_overall', auc] }
     rows += family_infos[:representatives].flat_map{|motif, motif_aucs|
       motif_aucs.map{|auc|
         [family, "representative:#{motif}", auc]
