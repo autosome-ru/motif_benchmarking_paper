@@ -21,6 +21,8 @@ ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13_all_vs_all_
 cat source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt ) > source_data/selex/motifs_vs_selex10.tsv
 cat source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt ) > source_data/selex/motifs_vs_selex50.tsv
 
+ruby download_jaspar_matrices.rb
+
 ruby collect_tf_annotation.rb
 ruby motif_families.rb 2 > motif_classes.tsv
 ruby motif_families.rb 3 > motif_families.tsv
