@@ -49,7 +49,7 @@ representative_motifs = File.readlines('source_data/motifs/hocomoco_cluster_list
 
 REPRESENTATIVE_MOTIFS_BY_FAMILY = families.map{|family|
   motifs = representative_motifs.select{|motif|
-    tfs = TFS_BY_MOTIF[motif]
+    tfs = TFS_BY_MOTIF[motif] || []
     tfs.flat_map{|tf|
       TF_INFO_BY_NAME[tf][:tf_family]
     }.include?(family)
@@ -113,12 +113,14 @@ representative_motifs_aucs_by_family = families.map{|family|
 
 #######################
 
-aucs_infos_by_family = [
+selected_families = [
   'Ets-related factors{3.5.2}',
   'Three-zinc finger Krüppel-related factors{2.3.1}',
   'Factors with multiple dispersed zinc fingers{2.3.4}',
   'Forkhead box (FOX) factors{3.3.1}',
-].map{|family|
+]
+
+aucs_infos_by_family = selected_families.map{|family|
   infos = {
     all: all_aucs_by_family[family],
     best_in_family: best_motif_aucs_by_family_in_family[family],
@@ -146,6 +148,56 @@ File.open('auc_infos_by_family.tsv', 'w') {|fw|
     rows += family_infos[:representatives].flat_map{|motif, motif_aucs|
       motif_aucs.map{|auc|
         [family, "all_representatives", auc]
+      }
+    }
+    rows
+  }.each{|row|
+    fw.puts row.join("\t")
+  }
+}
+
+#######################
+
+auc_delta_infos = families.map{|family|
+  best_motif_overall = best_motif_by_family_overall[family]
+  best_motif_in_family = best_motif_by_family_in_family[family]
+  representative_motifs = REPRESENTATIVE_MOTIFS_BY_FAMILY[family]
+
+  if best_motif_in_family
+    best_in_family_delta_aucs = EXPERIMENTS_BY_FAMILY[family].map{|experiment|
+      AUCS.auc(best_motif_overall, experiment) - AUCS.auc(best_motif_in_family, experiment)
+    }
+  else
+    best_in_family_delta_aucs = []
+  end
+
+  representatives_infos = representative_motifs.map{|representative_motif|
+    representative_delta_aucs = EXPERIMENTS_BY_FAMILY[family].map{|experiment|
+      AUCS.auc(best_motif_overall, experiment) - AUCS.auc(representative_motif, experiment)
+    }
+    [representative_motif, representative_delta_aucs]
+  }.to_h
+
+
+  [family, {best_in_family_delta_aucs: best_in_family_delta_aucs, representatives_infos: representatives_infos}]
+}.to_h
+
+#######################
+
+File.write('auc_delta_infos.json', auc_delta_infos.to_json)
+
+File.open('auc_delta_infos.tsv', 'w') {|fw|
+  fw.puts ['family', 'delta_type', 'auc'].join("\t")
+  auc_delta_infos.flat_map{|family, family_infos|
+    rows = []
+    rows += family_infos[:best_in_family_delta_aucs].map{|auc|
+      [family, 'best_in_family_delta', auc]
+    }
+    rows += family_infos[:representatives_infos].sort_by{|motif,repr_aucs|
+      repr_aucs.mean
+    }.each_with_index.flat_map{|(motif, repr_aucs), idx|
+      repr_aucs.map{|auc|
+        [family, "representative_delta:#{idx}", auc]
       }
     }
     rows
