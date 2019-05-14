@@ -29,8 +29,6 @@ cat distance_matrix.tsv | ruby symmetrize_matrix.rb | sponge distance_matrix.tsv
 ruby clusterize/clusterize.rb distance_matrix.tsv 0.95 --cluster-list clusters_dist_0.95.txt --mode distance
 cut -f1 clusters_dist_0.95.txt | sort > source_data/motifs/representatives.txt
 
-
-
 ruby collect_tf_annotation.rb
 ruby motif_families.rb 2 > motif_classes.tsv
 ruby motif_families.rb 3 > motif_families.tsv

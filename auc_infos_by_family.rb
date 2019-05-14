@@ -41,11 +41,7 @@ MOTIFS_BY_FAMILY = families.map{|family|
 
 #######################
 
-representative_motifs = File.readlines('source_data/motifs/hocomoco_cluster_list_192.txt').map{|l|
-  l.chomp.split("\t").first
-}.reject{|motif|
-  ['NFKB1_HUMAN.H11MO.0.A', 'EVX1_HUMAN.H11MO.0.D', 'EVX2_HUMAN.H11MO.0.A'].include?(motif)
-}
+representative_motifs = File.readlines('source_data/motifs/representatives.txt').map(&:chomp)
 
 REPRESENTATIVE_MOTIFS_BY_FAMILY = families.map{|family|
   motifs = representative_motifs.select{|motif|
