@@ -1,6 +1,3 @@
-# in hocomoco clustering is done by
-# ruby clusterize/clusterize.rb sym_HOCOMOCOv11_full_distance_matrix_HUMAN_mono.txt --cluster-list cluster_list_human_all_sim0.95.txt --mode distance
-# cut -f1 cluster_list_human_all_sim0.95.txt | sort > source_data/motifs/representatives.txt
 
 cat source_data/motifs/jaspar_genes2mat.txt | tr -d '\r' | sed -re 's/ +/\t/g' | sponge source_data/motifs/jaspar_genes2mat.txt
 cat source_data/motifs/hocomoco_genes2mat.txt | tr -d '\r' | sed -re 's/ +/\t/g' | sponge source_data/motifs/hocomoco_genes2mat.txt
@@ -22,6 +19,17 @@ cat source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt <( tail -n+2 source_
 cat source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt ) > source_data/selex/motifs_vs_selex50.tsv
 
 ruby download_jaspar_matrices.rb
+
+mkdir source_data/motifs/all_pcms
+cp source_data/motifs/hocomoco_pcm/* source_data/motifs/all_pcms/
+cp source_data/motifs/jaspar_pcm/* source_data/motifs/all_pcms/
+java -cp ape-3.0.2.jar ru.autosome.macroape.CollectDistanceMatrix source_data/motifs/all_pcms/ --pcm > distance_matrix.tsv
+cat distance_matrix.tsv | ruby symmetrize_matrix.rb | sponge distance_matrix.tsv
+
+ruby clusterize/clusterize.rb distance_matrix.tsv 0.95 --cluster-list clusters_dist_0.95.txt --mode distance
+cut -f1 clusters_dist_0.95.txt | sort > source_data/motifs/representatives.txt
+
+
 
 ruby collect_tf_annotation.rb
 ruby motif_families.rb 2 > motif_classes.tsv
