@@ -1,3 +1,7 @@
+# in hocomoco clustering is done by
+# ruby clusterize/clusterize.rb sym_HOCOMOCOv11_full_distance_matrix_HUMAN_mono.txt --cluster-list cluster_list_human_all_sim0.95.txt --mode distance
+# cut -f1 cluster_list_human_all_sim0.95.txt | sort > source_data/motifs/representatives.txt
+
 cat source_data/motifs/jaspar_genes2mat.txt | tr -d '\r' | sed -re 's/ +/\t/g' | sponge source_data/motifs/jaspar_genes2mat.txt
 cat source_data/motifs/hocomoco_genes2mat.txt | tr -d '\r' | sed -re 's/ +/\t/g' | sponge source_data/motifs/hocomoco_genes2mat.txt
 
@@ -6,6 +10,16 @@ cat source_data/chipseq/remap_genes2exp.txt | tr -d '\r' | sed -re 's/ +/\t/g' |
 cat source_data/chipseq/hocomoco_remap_all_vs_all.txt | sed -re 's/^ +//' | sed -re 's/ +/\t/g' | sponge source_data/chipseq/hocomoco_remap_all_vs_all.txt
 cat source_data/chipseq/jaspar_remap_all_vs_all.txt | sed -re 's/^ +//' | sed -re 's/ +/\t/g' | sponge source_data/chipseq/jaspar_remap_all_vs_all.txt
 cat source_data/chipseq/hocomoco_remap_all_vs_all.txt <( tail -n+2 source_data/chipseq/jaspar_remap_all_vs_all.txt ) > source_data/chipseq/motifs_vs_remap.tsv
+
+# SELEX aucs matrix was transposed compared to chipseq aucs matrix. We convert it to the same format
+# Not idempotent!!! Do it once!!!
+ruby transpose_selex_aucs_matrix.rb source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt | sponge source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt | sponge source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt | sponge source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt | sponge source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt
+
+cat source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt ) > source_data/selex/motifs_vs_selex10.tsv
+cat source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt ) > source_data/selex/motifs_vs_selex50.tsv
 
 ruby collect_tf_annotation.rb
 ruby motif_families.rb 2 > motif_classes.tsv
