@@ -25,9 +25,19 @@ def experiments_by_tf(tf)
   EXPERIMENTS_BY_TF.fetch(tf, []).select{|exp| AUCS.experiments.include?(exp) }
 end
 
+tf_classes = TF_INFO_BY_NAME.flat_map{|tf, tf_infos|
+  tf_infos[:tf_class]
+}.uniq.sort_by{|fam|
+  m = fam.match(/\{([\d.]+)\}/)
+  m && m[1].split('.').map(&:to_i)
+}
+
 families = TF_INFO_BY_NAME.flat_map{|tf, tf_infos|
   tf_infos[:tf_family]
-}.uniq
+}.uniq.sort_by{|fam|
+  m = fam.match(/\{([\d.]+)\}/)
+  m && m[1].split('.').map(&:to_i)
+}
 
 EXPERIMENTS_BY_FAMILY = families.map{|family|
   experiments = AUCS.experiments.select{|exp|
@@ -53,6 +63,22 @@ def experiments_by_family(family)
     [fam, experiments.select{|exp| AUCS.experiments.include?(exp) }]
   }.to_h
   @exps_by_fam[family]
+end
+
+def experiments_by_tfclass(tf_class)
+  AUCS.experiments.select{|experiment|
+    tf = TF_BY_EXPERIMENT[experiment]
+    tf && TF_INFO_BY_NAME[tf][:tf_class].include?(tf_class)
+  }
+end
+
+def motifs_by_tfclass(tf_class)
+  AUCS.motifs.select{|motif|
+    tfs = TFS_BY_MOTIF.fetch(motif, [])
+    tfs.flat_map{|tf|
+      TF_INFO_BY_NAME[tf][:tf_class]
+    }.uniq.include?(tf_class)
+  }
 end
 
 def motifs_by_family(family)
@@ -84,6 +110,12 @@ def representative_motifs_by_family(family)
 end
 
 #######################
+
+def aucs_over_experiments(motifs, experiments)
+  motifs.compact.flat_map{|motif|
+    AUCS.motif_aucs_across_experiments(motif, experiments).values
+  }
+end
 
 def aucs_over_tf_datasets(motifs, experiment_tfs)
   experiments = experiment_tfs.flat_map{|tf| experiments_by_tf(tf) }.compact.uniq
@@ -283,6 +315,26 @@ File.open('auc_delta_infos.tsv', 'w') {|fw|
     }
     rows
   }.each{|row|
+    fw.puts row.join("\t")
+  }
+}
+
+#######################
+header = ['-', *tf_classes]
+heatmap = [header] + tf_classes.map{|motif_class|
+  row = tf_classes.map{|experiment_class|
+    aucs_over_experiments(motifs_by_tfclass(motif_class), experiments_by_tfclass(experiment_class)).mean
+  }
+  [motif_class, *row]
+}
+# heatmap = heatmap.select{|motif_family, *row|
+#   row.any?
+# }.transpose.select{|experiment_family, *column|
+#   column.any?
+# }.transpose
+
+File.open('tf_classes_heatmap.tsv', 'w') {|fw|
+  heatmap.each{|row|
     fw.puts row.join("\t")
   }
 }
