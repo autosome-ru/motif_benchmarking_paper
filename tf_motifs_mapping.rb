@@ -43,8 +43,14 @@ experiment_tf_pairs = [
   'source_data/selex/jolma13_genes2exp.txt',
 ].flat_map{|experiment_mapping_fn|
   File.readlines(experiment_mapping_fn).map{|l|
-    l.chomp.split("\t").first(2).reverse
+    tf, experiment = l.chomp.split("\t").first(2)
+    [experiment, tf]
   }
 }
 
 TF_BY_EXPERIMENT = experiment_tf_pairs.to_h
+EXPERIMENTS_BY_TF = experiment_tf_pairs.group_by{|experiment, tf|
+  tf
+}.map{|tf, exp_tf_pairs|
+  [tf, exp_tf_pairs.map{|exp,tf| exp }]
+}.to_h
