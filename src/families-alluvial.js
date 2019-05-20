@@ -33,7 +33,6 @@ prepare_families_graph = function(data, key_from, key_to) {
 	});
 	fam_counts = count_elements(fam2fam.map(o => [o.from, o.to]).flat());
 	fams = Object.keys(fam_counts);
-	fams_sorted = Object.keys(fam_counts).sort(function(a,b) {return fam_counts[b] - fam_counts[a]; });
 	src_nodes = uniq( fam2fam.map(fam => fam.from + ':from') ).sort(tfclass_comparator).map(name => Object({name: name}));
 	dst_nodes = uniq( fam2fam.map(fam => fam.to + ':to') ).sort(tfclass_comparator).map(name => Object({name: name}));
 	nodes = src_nodes.concat(dst_nodes);
