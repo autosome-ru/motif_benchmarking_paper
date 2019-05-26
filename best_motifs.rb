@@ -25,11 +25,11 @@ aucs_matrix = AucsMatrix.from_file(aucs_matrix_fn)
 annotation = Annotation.new(aucs_matrix.experiments, aucs_matrix.motifs)
 
 
-header = ['experiment_TF', 'experiment_TF_family', 'best_motif', 'best_auc', 'tfs_of_best_motif', 'best_motifs_family']
+header = ['experiment_TF', 'experiment_family', 'num_experiments', 'motif', 'auc', 'tfs_of_motif', 'motif_family']
 puts header.join("\t")
 aucs_matrix.experiments.group_by{|experiment|
   annotation.tf_by_experiment(experiment)
-}.each{|experiment_tf, experiments|
+}.flat_map{|experiment_tf, experiments|
   # For each motif we aggregate AUCs over several datasets of an experiment TF
   # We calculate it for all motifs of all TFs, not only an experiment TF
   tf_aucs_by_motif = aucs_matrix.motifs.map{|motif|
@@ -45,16 +45,18 @@ aucs_matrix.experiments.group_by{|experiment|
     score
   }
 
-  families_of_experiment = annotation.tf_info_by_gene_name(experiment_tf)[tfclass_level_name]
-  tfs_of_best_motif = annotation.tfs_by_motif(best_motif)
-  families_of_best_motif = tfs_of_best_motif.flat_map{|tf|
+  [{experiment_tf: experiment_tf, num_experiments: experiments.size, motif: best_motif, auc: best_auc}]
+}.each{|info|
+  families_of_experiment = annotation.tf_info_by_gene_name(info[:experiment_tf])[tfclass_level_name]
+  tfs_of_motif = annotation.tfs_by_motif(info[:motif])
+  families_of_motif = tfs_of_motif.flat_map{|tf|
     annotation.tf_info_by_gene_name(tf)[tfclass_level_name]
   }.uniq
 
   row = [
-    experiment_tf, certain_or_ambiguous(families_of_experiment),
-    best_motif, best_auc,
-    tfs_of_best_motif.join(':'), certain_or_ambiguous(families_of_best_motif),
+    info[:experiment_tf], certain_or_ambiguous(families_of_experiment), info[:num_experiments],
+    info[:motif], info[:auc],
+    tfs_of_motif.join(':'), certain_or_ambiguous(families_of_motif),
   ]
   puts row.join("\t")
 }
