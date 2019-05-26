@@ -1,199 +1,107 @@
 require 'json'
-require_relative 'aucs'
-require_relative 'tf_motifs_mapping'
+require_relative 'aucs_matrix'
+require_relative 'auc_collection'
 
 class Array
   def mean; empty? ? nil : sum(0.0) / size; end
-  def median
-    return nil if empty?
-    sorted = self.sort
-    if size % 2 == 1
-      sorted[size / 2]
-    else
-      (sorted[size / 2] + sorted[size / 2 - 1]) / 2.0
-    end
-  end
 end
 
-AUCS = Aucs.from_file('source_data/chipseq/motifs_vs_remap.tsv')
-
-def tf_by_experiment(experiment)
-  TF_BY_EXPERIMENT[experiment]
-end
-
-def experiments_by_tf(tf)
-  EXPERIMENTS_BY_TF.fetch(tf, []).select{|exp| AUCS.experiments.include?(exp) }
-end
-
-tf_classes = TF_INFO_BY_NAME.flat_map{|tf, tf_infos|
-  tf_infos[:tf_class]
-}.uniq.sort_by{|fam|
-  m = fam.match(/\{([\d.]+)\}/)
-  m && m[1].split('.').map(&:to_i)
-}
-
-families = TF_INFO_BY_NAME.flat_map{|tf, tf_infos|
-  tf_infos[:tf_family]
-}.uniq.sort_by{|fam|
-  m = fam.match(/\{([\d.]+)\}/)
-  m && m[1].split('.').map(&:to_i)
-}
-
-EXPERIMENTS_BY_FAMILY = families.map{|family|
-  experiments = AUCS.experiments.select{|exp|
-    tf = tf_by_experiment(exp)
-    TF_INFO_BY_NAME[tf][:tf_family].include?(family)
-  }
-  [family, experiments]
-}.to_h
-
-MOTIFS_BY_FAMILY = families.map{|family|
-  motifs = AUCS.motifs.select{|motif|
-    tfs = TFS_BY_MOTIF[motif]
-    tfs.flat_map{|tf|
-      TF_INFO_BY_NAME[tf][:tf_family]
-    }.include?(family)
-  }
-  [family, motifs]
-}.to_h
-
-
-def experiments_by_family(family)
-  @exps_by_fam ||= EXPERIMENTS_BY_FAMILY.map{|fam, experiments|
-    [fam, experiments.select{|exp| AUCS.experiments.include?(exp) }]
-  }.to_h
-  @exps_by_fam[family]
-end
-
-def experiments_by_tfclass(tf_class)
-  AUCS.experiments.select{|experiment|
-    tf = TF_BY_EXPERIMENT[experiment]
-    tf && TF_INFO_BY_NAME[tf][:tf_class].include?(tf_class)
-  }
-end
-
-def motifs_by_tfclass(tf_class)
-  AUCS.motifs.select{|motif|
-    tfs = TFS_BY_MOTIF.fetch(motif, [])
-    tfs.flat_map{|tf|
-      TF_INFO_BY_NAME[tf][:tf_class]
-    }.uniq.include?(tf_class)
-  }
-end
-
-def motifs_by_family(family)
-  @mots_by_fam ||= MOTIFS_BY_FAMILY.map{|fam, motifs|
-    [fam, motifs.select{|motif| AUCS.motifs.include?(motif) }]
-  }.to_h
-  @mots_by_fam[family]
-end
+aucs_matrix = AucsMatrix.from_file('source_data/chipseq/motifs_vs_remap.tsv')
+annotation = Annotation.new(aucs_matrix.experiments, aucs_matrix.motifs)
+aucs = AucCollection.new(aucs_matrix, annotation)
 
 #######################
+families = annotation.tfclass_names(:tf_family)
 
 representative_motifs = File.readlines('source_data/motifs/representatives.txt').map(&:chomp)
 
 REPRESENTATIVE_MOTIFS_BY_FAMILY = families.map{|family|
   motifs = representative_motifs.select{|motif|
-    tfs = TFS_BY_MOTIF[motif] || []
+    tfs = annotation.tfs_by_motif(motif)
     tfs.flat_map{|tf|
-      TF_INFO_BY_NAME[tf][:tf_family]
+      annotation.tf_info_by_gene_name(tf)[:tf_family]
     }.include?(family)
   }
   [family, motifs]
 }.to_h
 
-def representative_motifs_by_family(family)
+def representative_motifs_by_family(aucs, family)
   @repr_mots_by_fam ||= REPRESENTATIVE_MOTIFS_BY_FAMILY.map{|fam, motifs|
-    [fam, motifs.select{|motif| AUCS.motifs.include?(motif) }]
+    [fam, motifs.select{|motif| aucs.motifs.include?(motif) }]
   }.to_h
   @repr_mots_by_fam[family]
 end
 
 #######################
 
-def aucs_over_experiments(motifs, experiments)
-  motifs.compact.flat_map{|motif|
-    AUCS.motif_aucs_across_experiments(motif, experiments).values
-  }
-end
 
-def aucs_over_tf_datasets(motifs, experiment_tfs)
-  experiments = experiment_tfs.flat_map{|tf| experiments_by_tf(tf) }.compact.uniq
-  motifs.compact.flat_map{|motif|
-    AUCS.motif_aucs_across_experiments(motif, experiments).values
-  }
-end
+family_triples = families.map{|family|
+  motifs = annotation.motifs_by_tfclass_name(:tf_family, family)
+  experiments = annotation.experiments_by_tfclass_name(:tf_family, family)
+  [family, motifs, experiments]
+}
 
-def aucs_over_family_datasets(motifs, family)
-  experiments = experiments_by_family(family) || []
-  motifs.compact.flat_map{|motif|
-    AUCS.motif_aucs_across_experiments(motif, experiments).values
-  }
-end
-
-#######################
-
-all_aucs_by_family = families.map{|family|
-  [family, aucs_over_family_datasets(motifs_by_family(family), family)]
+all_aucs_by_family = family_triples.map{|family, motifs, experiments|
+  [family, aucs.aucs_subset(motifs, experiments)]
 }.to_h
 
 #######################
 
-best_motif_by_family_in_family = families.map{|family|
-  motif_aucs_pairs = motifs_by_family(family).map{|motif|
-    [motif, aucs_over_family_datasets([motif], family)]
+best_motif_by_family_in_family = family_triples.map{|family, motifs, experiments|
+  motif_aucs_pairs = motifs.map{|motif|
+    [motif, aucs.aucs_subset([motif], experiments)]
   }
   motif, auc_vals = motif_aucs_pairs.max_by{|motif, aucs| aucs.mean }
   [family, motif]
 }.to_h
 
-best_motif_aucs_by_family_in_family = families.map{|family|
-  best_motif = best_motif_by_family_in_family[family]
-  [family, aucs_over_family_datasets([best_motif], family)]
+best_motif_aucs_by_family_in_family = family_triples.map{|family, motifs, experiments|
+    best_motif = best_motif_by_family_in_family[family]
+    [family, aucs.aucs_subset([best_motif].compact, experiments)]
 }.to_h
 
 #######################
 
-best_motif_by_family_overall = families.map{|family|
-  motif_aucs_pairs = AUCS.motifs.map{|motif|
-    [motif, aucs_over_family_datasets([motif], family)]
+best_motif_by_family_overall = family_triples.map{|family, _, experiments|
+  motif_aucs_pairs = annotation.motifs.map{|motif|
+    [motif, aucs.aucs_subset([motif], experiments)]
   }
   motif, auc_vals = motif_aucs_pairs.max_by{|motif, aucs| aucs.mean }
   [family, motif]
 }.to_h
 
-best_motif_aucs_by_family_overall = families.map{|family|
+best_motif_aucs_by_family_overall = family_triples.map{|family, _, experiments|
   best_motif = best_motif_by_family_overall[family]
-  [family, aucs_over_family_datasets([best_motif], family)]
+  [family, aucs.aucs_subset([best_motif].compact, experiments)]
 }.to_h
 
 #######################
 
-best_representative_by_family = families.map{|family|
+best_representative_by_family = family_triples.map{|family, _, experiments|
   motif_aucs_pairs = representative_motifs.map{|motif|
-    [motif, aucs_over_family_datasets([motif], family)]
+    [motif, aucs.aucs_subset([motif], experiments)]
   }
   motif, auc_vals = motif_aucs_pairs.max_by{|motif, aucs| aucs.mean }
   [family, motif]
 }.to_h
 
-best_representative_aucs_by_family = families.map{|family|
+best_representative_aucs_by_family = family_triples.map{|family, _, experiments|
   best_motif = best_representative_by_family[family]
-  [family, aucs_over_family_datasets([best_motif], family)]
+  [family, aucs.aucs_subset([best_motif], experiments)]
 }.to_h
 
 #######################
 
-family_representative_motifs_aucs_by_family = families.map{|family|
-  motifs_aucs = representative_motifs_by_family(family).map{|motif|
-    [motif, aucs_over_family_datasets([motif], family)]
+family_representative_motifs_aucs_by_family = family_triples.map{|family, _, experiments|
+  motifs_aucs = representative_motifs_by_family(aucs, family).map{|motif|
+    [motif, aucs.aucs_subset([motif], experiments)]
   }.to_h
   [family, motifs_aucs]
 }.to_h
 
-representative_motifs_aucs_by_family = families.map{|family|
+representative_motifs_aucs_by_family = family_triples.map{|family, _, experiments|
   motifs_aucs = representative_motifs.map{|motif|
-    [motif, aucs_over_family_datasets([motif], family)]
+    [motif, aucs.aucs_subset([motif], experiments)]
   }.to_h
   [family, motifs_aucs]
 }.to_h
@@ -202,12 +110,11 @@ representative_motifs_aucs_by_family = families.map{|family|
 #######################
 
 proper_tf_aucs_by_family = families.map{|family|
-  motifs_aucs = motifs_by_family(family).flat_map{|motif|
-    TFS_BY_MOTIF[motif]
-  }.map{|tf|
-    [tf, aucs_over_tf_datasets(MOTIFS_BY_TF[tf], [tf])]
+  tfs = annotation.tfs_by_tfclass_name(:tf_family, family)
+  tf_aucs = tfs.map{|tf|
+    [tf, aucs.aucs_subset(annotation.motifs_by_tf(tf), annotation.experiments_by_tf(tf))]
   }.to_h
-  [family, motifs_aucs]
+  [family, tf_aucs]
 }.to_h
 
 #######################
@@ -271,22 +178,22 @@ File.open('auc_infos_by_family.tsv', 'w') {|fw|
 
 #######################
 
-auc_delta_infos = families.map{|family|
+auc_delta_infos = family_triples.map{|family, motifs, experiments|
   best_motif_overall = best_motif_by_family_overall[family]
   best_motif_in_family = best_motif_by_family_in_family[family]
-  family_representative_motifs = representative_motifs_by_family(family)
+  family_representative_motifs = representative_motifs_by_family(aucs, family)
 
   if best_motif_in_family
-    best_in_family_delta_aucs = experiments_by_family(family).map{|experiment|
-      AUCS.auc(best_motif_overall, experiment) - AUCS.auc(best_motif_in_family, experiment)
+    best_in_family_delta_aucs = experiments.map{|experiment|
+      aucs.auc(best_motif_overall, experiment) - aucs.auc(best_motif_in_family, experiment)
     }
   else
     best_in_family_delta_aucs = []
   end
 
   representatives_infos = family_representative_motifs.map{|representative_motif|
-    representative_delta_aucs = experiments_by_family(family).map{|experiment|
-      AUCS.auc(best_motif_overall, experiment) - AUCS.auc(representative_motif, experiment)
+    representative_delta_aucs = experiments.map{|experiment|
+      aucs.auc(best_motif_overall, experiment) - aucs.auc(representative_motif, experiment)
     }
     [representative_motif, representative_delta_aucs]
   }.to_h
@@ -315,26 +222,6 @@ File.open('auc_delta_infos.tsv', 'w') {|fw|
     }
     rows
   }.each{|row|
-    fw.puts row.join("\t")
-  }
-}
-
-#######################
-header = ['-', *tf_classes]
-heatmap = [header] + tf_classes.map{|motif_class|
-  row = tf_classes.map{|experiment_class|
-    aucs_over_experiments(motifs_by_tfclass(motif_class), experiments_by_tfclass(experiment_class)).mean
-  }
-  [motif_class, *row]
-}
-# heatmap = heatmap.select{|motif_family, *row|
-#   row.any?
-# }.transpose.select{|experiment_family, *column|
-#   column.any?
-# }.transpose
-
-File.open('tf_classes_heatmap.tsv', 'w') {|fw|
-  heatmap.each{|row|
     fw.puts row.join("\t")
   }
 }

@@ -15,9 +15,21 @@ ruby transpose_selex_aucs_matrix.rb source_data/selex/hocomoco_jolma13_all_vs_al
 ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt | sponge source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt
 ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt | sponge source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt
 
+ruby transpose_selex_aucs_matrix.rb source_data/selex/hocomoco_jolma13ext_all_vs_all_roc10.txt | sponge source_data/selex/hocomoco_jolma13ext_all_vs_all_roc10.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/hocomoco_jolma13ext_all_vs_all_roc50.txt | sponge source_data/selex/hocomoco_jolma13ext_all_vs_all_roc50.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13ext_roc10.txt | sponge source_data/selex/jaspar_jolma13ext_roc10.txt
+ruby transpose_selex_aucs_matrix.rb source_data/selex/jaspar_jolma13ext_roc50.txt | sponge source_data/selex/jaspar_jolma13ext_roc50.txt
+
+
 cat source_data/selex/hocomoco_jolma13_all_vs_all_roc10.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc10.txt ) > source_data/selex/motifs_vs_selex10.tsv
 cat source_data/selex/hocomoco_jolma13_all_vs_all_roc50.txt <( tail -n+2 source_data/selex/jaspar_jolma13_all_vs_all_roc50.txt ) > source_data/selex/motifs_vs_selex50.tsv
 
+cat source_data/selex/hocomoco_jolma13ext_all_vs_all_roc10.txt <( tail -n+2 source_data/selex/jaspar_jolma13ext_roc10.txt ) > source_data/selex/motifs_vs_selex10.tsv
+cat source_data/selex/hocomoco_jolma13ext_all_vs_all_roc50.txt <( tail -n+2 source_data/selex/jaspar_jolma13ext_roc50.txt ) > source_data/selex/motifs_vs_selex50.tsv
+
+
+ruby download_jaspar_infos.rb
+cat source_data/motifs/jaspar_infos/*.json > source_data/motifs/jaspar_infos.json
 ruby download_jaspar_matrices.rb
 
 mkdir source_data/motifs/all_pcms
@@ -32,8 +44,8 @@ cut -f1 clusters_dist_0.95.txt | sort > source_data/motifs/representatives.txt
 ruby collect_tf_annotation.rb
 ruby motif_families.rb 2 > motif_classes.tsv
 ruby motif_families.rb 3 > motif_families.tsv
-ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2 > chipseq_best_motifs_with_classes.tsv
-ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3 > chipseq_best_motifs_with_families.tsv
+ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2  0.7  > chipseq_best_motifs_with_classes.tsv
+ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3  0.7  > chipseq_best_motifs_with_families.tsv
 
 ruby family_aggregator.rb chipseq_best_motifs_with_classes.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_classes_aggregated.tsv
 # ruby family_aggregator.rb chipseq_best_motifs_with_families.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_families_aggregated.tsv
@@ -59,4 +71,21 @@ cat chipseq_best_motifs_with_families.tsv | awk -F $'\t' -e '((NR==1) || ($6 ~ /
 # http://localhost:8080/alluvial-plot-tfs.html?tsv=chipseq_best_motifs_families_Forkhead.tsv
 # http://localhost:8080/alluvial-plot-tfs.html?tsv=chipseq_best_motifs_families_Tryptophan.tsv
 
+################################
+# Make heatmaps
+mkdir -p results/chipseq/heatmap results/selex10/heatmap
+ruby mean_aucs_matrix.rb source_data/chipseq/motifs_vs_remap.tsv tf_family > results/chipseq/heatmap/heatmap_chipseq.tsv
+ruby mean_aucs_matrix.rb source_data/selex/motifs_vs_selex10.tsv tf_family > results/selex10/heatmap/heatmap_selex10.tsv
+
+ruby refine_heatmap.rb results/chipseq/heatmap/heatmap_chipseq.tsv > results/chipseq/heatmap/heatmap_chipseq.filtered.tsv
+ruby refine_heatmap.rb results/selex10/heatmap/heatmap_selex10.tsv > results/selex10/heatmap/heatmap_selex10.filtered.tsv
+
+ruby refine_heatmap.rb results/chipseq/heatmap/heatmap_chipseq.tsv --class-names > results/chipseq/heatmap/heatmap_chipseq.filtered.classnames.tsv
+ruby refine_heatmap.rb results/selex10/heatmap/heatmap_selex10.tsv --class-names > results/selex10/heatmap/heatmap_selex10.filtered.classnames.tsv
+
+python3.6 plot_heatmap.py results/chipseq/heatmap/heatmap_chipseq.filtered.tsv results/chipseq/heatmap/heatmap_chipseq.filtered.svg
+python3.6 plot_heatmap.py results/selex10/heatmap/heatmap_selex10.filtered.tsv results/selex10/heatmap/heatmap_selex10.filtered.svg
+################################
+
 ruby auc_infos_by_family.rb
+ruby chipseq_selex_comparison.rb > chipseq_selex_comparison.tsv 
