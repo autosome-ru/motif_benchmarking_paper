@@ -18,6 +18,7 @@ end
 
 aucs_matrix_fn = ARGV[0]
 tfclass_level = Integer(ARGV[1])
+auc_threshold = Float(ARGV[2])
 tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 
 aucs_matrix = AucsMatrix.from_file(aucs_matrix_fn)
@@ -36,14 +37,11 @@ aucs_matrix.experiments.group_by{|experiment|
     }
     [motif, motif_aucs]
   }
-  # and select best motif by average AUC over all datasets for a TF
-  (best_motif, best_auc) = tf_aucs_by_motif.map{|motif, motif_aucs|
-    [motif, motif_aucs.mean]
-  }.max_by{|motif, score|
-    score
+  tf_aucs_by_motif.map{|motif, aucs|
+    {experiment_tf: experiment_tf, num_experiments: experiments.size, motif: motif, auc: aucs.mean}
   }
-
-  [{experiment_tf: experiment_tf, num_experiments: experiments.size, motif: best_motif, auc: best_auc}]
+}.select{|info|
+  info[:auc] >= auc_threshold
 }.each{|info|
   families_of_experiment = annotation.tf_info_by_gene_name(info[:experiment_tf])[tfclass_level_name]
   tfs_of_motif = annotation.tfs_by_motif(info[:motif])
