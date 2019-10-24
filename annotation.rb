@@ -57,11 +57,14 @@ class Annotation
 
   def tf_motif_pairs
     @tf_motif_pairs ||= [
-      'source_data/motifs/hocomoco_genes2mat.txt',
-      'source_data/motifs/jaspar_genes2mat.txt',
-    ].flat_map{|fn|
+      ['source_data/motifs/hocomoco_genes2mat.txt', ->(motif_name){ motif_name }],
+      ['source_data/motifs/jaspar_genes2mat.txt', ->(motif_name){ motif_name.split('_').first }],
+      ['ccg.epfl.ch/pwmtools/benchmarking/genes2cisbp.txt', ->(motif_name){ motif_name }],
+    ].flat_map{|fn, motif_name_transformation|
       File.readlines(fn).map{|l|
         l.split("\t").map(&:strip)
+      }.map{|tf, motif_name, *rest|
+        [tf, motif_name_transformation.call(motif_name)]
       }
     }.select{|tf, motif|
       motifs.include?(motif)
@@ -92,6 +95,8 @@ class Annotation
     @experiment_tf_pairs ||= [
       'source_data/chipseq/remap_genes2exp.txt',
       'source_data/selex/jolma13_genes2exp.txt',
+      'ccg.epfl.ch/pwmtools/benchmarking/genes2jolma_yang.txt',
+      'ccg.epfl.ch/pwmtools/benchmarking/genes2uniprobe.txt',
     ].flat_map{|experiment_mapping_fn|
       File.readlines(experiment_mapping_fn).map{|l|
         tf, experiment = l.chomp.split("\t").first(2)

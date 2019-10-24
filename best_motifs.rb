@@ -23,11 +23,20 @@ tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 aucs_matrix = AucsMatrix.from_file(aucs_matrix_fn)
 annotation = Annotation.new(aucs_matrix.experiments, aucs_matrix.motifs)
 
+aucs_matrix_chipseq = AucsMatrix.from_file('source_data/chipseq/motifs_vs_remap.tsv')
+aucs_matrix_selex = AucsMatrix.from_file('source_data/selex/motifs_vs_selex10.tsv')
+chipseq_annotation = Annotation.new(aucs_matrix_chipseq.experiments, aucs_matrix_chipseq.motifs)
+selex_annotation = Annotation.new(aucs_matrix_selex.experiments, aucs_matrix_selex.motifs)
+
+experiment_tfs = (chipseq_annotation.experiment_tfs + selex_annotation.experiment_tfs).uniq.select{|tf|
+  chipseq_annotation.experiments_by_tf(tf).size >= 1 &&
+  selex_annotation.experiments_by_tf(tf).size >= 1
+}
+
 header = ['experiment_TF', 'experiment_family', 'num_experiments', 'motif', 'auc', 'tfs_of_motif', 'motif_family']
 puts header.join("\t")
-aucs_matrix.experiments.group_by{|experiment|
-  annotation.tf_by_experiment(experiment)
-}.flat_map{|experiment_tf, experiments|
+experiment_tfs.flat_map{|experiment_tf|
+  experiments = annotation.experiments_by_tf(experiment_tf)
   # For each motif we aggregate AUCs over several datasets of an experiment TF
   # We calculate it for all motifs of all TFs, not only an experiment TF
   tf_aucs_by_motif = aucs_matrix.motifs.map{|motif|

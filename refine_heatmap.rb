@@ -4,11 +4,12 @@ require_relative 'aucs_matrix'
 
 use_classnames = ARGV.delete('--class-names')
 heatmap_fn = ARGV[0]
+family_field = ARGV[1].to_sym # :tf_family / :cisbp_families
 
-aucs_matrix_chipseq = AucsMatrix.from_file('source_data/chipseq/motifs_vs_remap.tsv')
+aucs_matrix_chipseq = AucsMatrix.from_file('source_data/final/remap_all_roc.txt')
 chipseq_annotation = Annotation.new(aucs_matrix_chipseq.experiments, aucs_matrix_chipseq.motifs)
 
-aucs_matrix_selex = AucsMatrix.from_file('source_data/selex/motifs_vs_selex10.tsv')
+aucs_matrix_selex = AucsMatrix.from_file('source_data/final/jy50_all_roc.txt')
 selex_annotation = Annotation.new(aucs_matrix_selex.experiments, aucs_matrix_selex.motifs)
 
 lines = File.readlines(heatmap_fn).map(&:chomp)
@@ -20,12 +21,12 @@ matrix = lines.drop(1).map{|l|
   }
 }
 
-relevant_families = chipseq_annotation.tfclass_names(:tf_family).select{|family|
-  chipseq_annotation.motifs_by_tfclass_name(:tf_family, family).size >= 2
+relevant_families = chipseq_annotation.tfclass_names(family_field).select{|family|
+  chipseq_annotation.motifs_by_tfclass_name(family_field, family).size >= 2
 }.select{|family|
-  selex_annotation.experiments_by_tfclass_name(:tf_family, family).size >= 2
+  selex_annotation.experiments_by_tfclass_name(family_field, family).size >= 2
 }.select{|family|
-  chipseq_annotation.experiments_by_tfclass_name(:tf_family, family).size >= 2
+  chipseq_annotation.experiments_by_tfclass_name(family_field, family).size >= 2
 }
 
 relevant_fam_indices = families.each_with_index.select{|family,idx| relevant_families.include?(family) }.map(&:last)

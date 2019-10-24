@@ -138,7 +138,7 @@ aucs_infos_by_family = selected_families.map{|family|
   [family, infos]
 }.to_h
 
-File.write('auc_infos_by_family.json', aucs_infos_by_family.to_json)
+# File.write('auc_infos_by_family.json', aucs_infos_by_family.to_json)
 
 
 File.open('auc_infos_by_family.tsv', 'w') {|fw|
@@ -162,7 +162,7 @@ File.open('auc_infos_by_family.tsv', 'w') {|fw|
       motif_aucs.mean
     }.reverse.each_with_index.flat_map{|(motif, motif_aucs), idx|
       motif_aucs.map{|auc|
-        [family, "representative:#{idx}", auc]
+        [family, "representative:#{idx}:#{motif}", auc]
       }
     }
     rows += family_infos[:family_representatives].flat_map{|motif, motif_aucs|
@@ -176,52 +176,52 @@ File.open('auc_infos_by_family.tsv', 'w') {|fw|
   }
 }
 
-#######################
+# #######################
 
-auc_delta_infos = family_triples.map{|family, motifs, experiments|
-  best_motif_overall = best_motif_by_family_overall[family]
-  best_motif_in_family = best_motif_by_family_in_family[family]
-  family_representative_motifs = representative_motifs_by_family(aucs, family)
+# auc_delta_infos = family_triples.map{|family, motifs, experiments|
+#   best_motif_overall = best_motif_by_family_overall[family]
+#   best_motif_in_family = best_motif_by_family_in_family[family]
+#   family_representative_motifs = representative_motifs_by_family(aucs, family)
 
-  if best_motif_in_family
-    best_in_family_delta_aucs = experiments.map{|experiment|
-      aucs.auc(best_motif_overall, experiment) - aucs.auc(best_motif_in_family, experiment)
-    }
-  else
-    best_in_family_delta_aucs = []
-  end
+#   if best_motif_in_family
+#     best_in_family_delta_aucs = experiments.map{|experiment|
+#       aucs.auc(best_motif_overall, experiment) - aucs.auc(best_motif_in_family, experiment)
+#     }
+#   else
+#     best_in_family_delta_aucs = []
+#   end
 
-  representatives_infos = family_representative_motifs.map{|representative_motif|
-    representative_delta_aucs = experiments.map{|experiment|
-      aucs.auc(best_motif_overall, experiment) - aucs.auc(representative_motif, experiment)
-    }
-    [representative_motif, representative_delta_aucs]
-  }.to_h
+#   representatives_infos = family_representative_motifs.map{|representative_motif|
+#     representative_delta_aucs = experiments.map{|experiment|
+#       aucs.auc(best_motif_overall, experiment) - aucs.auc(representative_motif, experiment)
+#     }
+#     [representative_motif, representative_delta_aucs]
+#   }.to_h
 
 
-  [family, {best_in_family_delta_aucs: best_in_family_delta_aucs, representatives_infos: representatives_infos}]
-}.to_h
+#   [family, {best_in_family_delta_aucs: best_in_family_delta_aucs, representatives_infos: representatives_infos}]
+# }.to_h
 
-#######################
+# #######################
 
-File.write('auc_delta_infos.json', auc_delta_infos.to_json)
+# File.write('auc_delta_infos.json', auc_delta_infos.to_json)
 
-File.open('auc_delta_infos.tsv', 'w') {|fw|
-  fw.puts ['family', 'delta_type', 'auc'].join("\t")
-  auc_delta_infos.flat_map{|family, family_infos|
-    rows = []
-    rows += family_infos[:best_in_family_delta_aucs].map{|auc|
-      [family, 'best_in_family_delta', auc]
-    }
-    rows += family_infos[:representatives_infos].sort_by{|motif,repr_aucs|
-      repr_aucs.mean
-    }.each_with_index.flat_map{|(motif, repr_aucs), idx|
-      repr_aucs.map{|auc|
-        [family, "representative_delta:#{idx}", auc]
-      }
-    }
-    rows
-  }.each{|row|
-    fw.puts row.join("\t")
-  }
-}
+# File.open('auc_delta_infos.tsv', 'w') {|fw|
+#   fw.puts ['family', 'delta_type', 'auc'].join("\t")
+#   auc_delta_infos.flat_map{|family, family_infos|
+#     rows = []
+#     rows += family_infos[:best_in_family_delta_aucs].map{|auc|
+#       [family, 'best_in_family_delta', auc]
+#     }
+#     rows += family_infos[:representatives_infos].sort_by{|motif,repr_aucs|
+#       repr_aucs.mean
+#     }.each_with_index.flat_map{|(motif, repr_aucs), idx|
+#       repr_aucs.map{|auc|
+#         [family, "representative_delta:#{idx}", auc]
+#       }
+#     }
+#     rows
+#   }.each{|row|
+#     fw.puts row.join("\t")
+#   }
+# }
