@@ -141,6 +141,12 @@ uniprot_tf_infos_unchecked.select{|info|
 
 
 ######### Certain TF uniprots #########
+uniprot_tf_infos_unchecked.select{|info|
+  info[:uniprot_data].size != 1
+}.each{|info|
+  $stderr.puts "Probably incorrect mapping: #{info}"
+}
+
 uniprot_tf_infos = []
 uniprot_tf_infos += uniprot_tf_infos_unchecked.select{|info|
   info[:uniprot_data].size == 1

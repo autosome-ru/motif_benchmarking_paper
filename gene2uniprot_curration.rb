@@ -49,6 +49,9 @@ MANUALLY_CURRATED_UNIPROT_AC = {
   'TCFAP2A' => 'P34056', # AP2A_MOUSE
   'ZFP652'  => 'Q5DU09', # ZN652_MOUSE
   'ZFP740'  => 'Q6NZQ6', # ZN740_MOUSE
+  # TFs from CISBP
+  'OSR1'    => 'Q8TAX0', # OSR1_HUMAN
+  'ZNF225'  => 'Q9UK10', # ZN225_HUMAN
 }
 
 #####################################
@@ -62,6 +65,7 @@ MANUALLY_CURRATED_UNIPROT_AC = {
 # TCF3  {:uniprot_ac=>"P15923", :uniprot_id=>"TFE2_HUMAN", :gene_names=>["TCF3", "BHLHB21", "E2A", "ITF1"]}
 # TCF4  {:uniprot_ac=>"P15884", :uniprot_id=>"ITF2_HUMAN", :gene_names=>["TCF4", "BHLHB19", "ITF2", "SEF2"]}
 # ZFP36 {:uniprot_ac=>"P26651", :uniprot_id=>"TTP_HUMAN", :gene_names=>["ZFP36", "G0S24", "NUP475", "RNF162A", "TIS11A", "TTP"]}
+# SOX12 {:uniprot_ac=>"O15370", :uniprot_id=>"SOX12_HUMAN", :gene_names=>["SOX12", "SOX22"]}
 ###################
 ###  These records are CONTROVERSIAL AND DISCARDED ###
 # HMX3  {:uniprot_ac=>"Q8IZL8", :uniprot_id=>"PELP1_HUMAN", :gene_names=>["PELP1", "HMX3", "MNAR"]}
@@ -72,6 +76,7 @@ MANUALLY_CURRATED_UNIPROT_AC = {
 # TCF3  {:uniprot_ac=>"Q9HCS4", :uniprot_id=>"TF7L1_HUMAN", :gene_names=>["TCF7L1", "TCF3"]}
 # TCF4  {:uniprot_ac=>"Q9NQB0", :uniprot_id=>"TF7L2_HUMAN", :gene_names=>["TCF7L2", "TCF4"]}
 # ZFP36 {:uniprot_ac=>"P16415", :uniprot_id=>"ZN823_HUMAN", :gene_names=>["ZNF823", "ZFP36"]}
+# SOX12 {:uniprot_ac=>"O60248", :uniprot_id=>"SOX15_HUMAN", :gene_names=>["SOX15", "SOX12", "SOX20", "SOX26", "SOX27"]}
 
 SEMI_CURRATED_UNIPROT_AC = {
   "HMX3"  => "A6NHT5",
@@ -82,6 +87,7 @@ SEMI_CURRATED_UNIPROT_AC = {
   "TCF3"  => "P15923",
   "TCF4"  => "P15884",
   "ZFP36" => "P26651",
+  "SOX12" => "O15370",
 }
 ############# Unknown TF ###############
 ### TFs which can't be found in uniprot by name ###
