@@ -17,16 +17,15 @@ def certain_or_ambiguous(values)
 end
 
 aucs_matrix_fn = ARGV[0]
-tfclass_level = Integer(ARGV[1])
+tfclass_level_name = ARGV[1].to_sym
 auc_threshold = Float(ARGV[2])
-tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
 
 aucs_matrix = AucsMatrix.from_file(aucs_matrix_fn)
 annotation = Annotation.new(aucs_matrix.experiments, aucs_matrix.motifs)
 
 
-aucs_matrix_chipseq = AucsMatrix.from_file('source_data/chipseq/motifs_vs_remap.tsv')
-aucs_matrix_selex = AucsMatrix.from_file('source_data/selex/motifs_vs_selex10.tsv')
+aucs_matrix_chipseq = AucsMatrix.from_file('source_data/final/remap_all_roc.txt')
+aucs_matrix_selex = AucsMatrix.from_file('source_data/final/jy10_all_roc.txt')
 chipseq_annotation = Annotation.new(aucs_matrix_chipseq.experiments, aucs_matrix_chipseq.motifs)
 selex_annotation = Annotation.new(aucs_matrix_selex.experiments, aucs_matrix_selex.motifs)
 
