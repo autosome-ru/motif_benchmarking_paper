@@ -97,6 +97,7 @@ class Annotation
       'source_data/selex/jolma13_genes2exp.txt',
       'ccg.epfl.ch/pwmtools/benchmarking/genes2jolma_yang.txt',
       'ccg.epfl.ch/pwmtools/benchmarking/genes2uniprobe.txt',
+      'source_data/uniprobe/genes2uniprobe_manual.txt',
     ].flat_map{|experiment_mapping_fn|
       File.readlines(experiment_mapping_fn).map{|l|
         tf, experiment = l.chomp.split("\t").first(2)

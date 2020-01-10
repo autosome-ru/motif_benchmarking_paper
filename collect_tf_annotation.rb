@@ -22,7 +22,7 @@ def tf_classes_as_hash(uniprot_id)
   TFCLASS_LEVELS.zip(tf_classes_as_array(uniprot_id)).to_h
 end
 
-def request_uniprot_data_by_gene_name(gene_name)
+def request_uniprot_data_by_gene_name(gene_name, organism:)
   if !$gene_cache
     if File.exist?('uniprot_cache_gene.json')
       $gene_cache = JSON.parse(File.read('uniprot_cache_gene.json')).transform_values{|v| v.map{|el| el.transform_keys(&:to_sym) } }
@@ -36,7 +36,7 @@ def request_uniprot_data_by_gene_name(gene_name)
     params = {
       # organism:9606 - Homo sapiens (Human); Text query for organism obtains genes of other species 
       # like "Human adenovirus" organism on par with Human itself
-      query: "gene_exact:#{gene_name}+organism:9606+reviewed:yes",
+      query: "gene_exact:#{gene_name}+organism:#{organism}+reviewed:yes",
       sort: 'score',
       columns: 'id,entry name,genes',
       # limit: 1,
@@ -103,6 +103,7 @@ all_tf_names = [
   'source_data/selex/jolma13_genes2exp.txt',
   'source_data/selex/genes2jolma_yang.txt',
   'source_data/uniprobe/genes2uniprobe.txt',
+  'source_data/uniprobe/genes2uniprobe_manual.txt',
 ].flat_map{|fn|
   File.readlines(fn).map{|l|
     l.split("\t")[0].strip
@@ -117,7 +118,11 @@ uniprot_tf_infos_unchecked = all_tf_names.reject{|tf_name|
   CURRATED_UNIPROT_AC.has_key?(tf_name) # we will add them later
 }.map{|tf_name|
   $stderr.print('.')
-  {tf_name: tf_name, uniprot_data: request_uniprot_data_by_gene_name(tf_name)}
+  if tf_name.upcase == tf_name
+    {tf_name: tf_name, uniprot_data: request_uniprot_data_by_gene_name(tf_name, organism: 9606)} # Homo sapiens
+  else
+    {tf_name: tf_name, uniprot_data: request_uniprot_data_by_gene_name(tf_name, organism: 10090)} # Mus musculus
+  end
 }
 
 $stderr.puts("\nUniprots loaded")
@@ -186,6 +191,42 @@ tf_infos = uniprot_tf_infos.map{|tf_name, uniprot_record|
 }.sort_by{|info|
   info[:tf_name]
 }
+
+Homologene = Struct.new(:homologene_id, :organism_name, :taxon_id, :symbol, :entrezgene_id, :mgi_id, :hgnc_id, :omim_gene_id, :genetic_location, :genomic_coordinates, :nucl_refseq_ids, :protein_refseq_ids, :swissprot_ids) do
+  def self.from_string(str)
+    self.new(*str.chomp.split("\t"))
+  end
+
+  def self.each_in_file(filename, &block)
+    return enum_for(:each_in_file, filename)  unless block_given?
+    File.readlines(filename).map{|l|
+      self.from_string(l)
+    }.each(&block)
+  end
+end
+
+human_symbols_by_mouse = Homologene.each_in_file('source_data/HOM_MouseHumanSequence.rpt').group_by(&:homologene_id).map{|homologene_id, records|
+  mouse_records = records.select{|r| r.taxon_id == '10090' }
+  human_records = records.select{|r| r.taxon_id == '9606' }
+  human_symbols = human_records.map{|r| r.symbol }.uniq
+  mouse_records.map{|r| [r.symbol, human_symbols] }
+}.flatten(1).to_h
+
+tf_infos_by_gene_name = tf_infos.group_by{|info| info[:tf_gene_name] }.to_h
+
+tf_infos.select{|info|
+  info[:uniprot_id].end_with?('MOUSE')
+}.each{|info|
+  mouse_gene_symbol = info[:tf_gene_name]
+  human_gene_symbols = human_symbols_by_mouse[ mouse_gene_symbol ]
+  human_infos = tf_infos_by_gene_name.values_at(*human_gene_symbols).flatten.compact
+  human_cisbp_families = human_infos.map{|human_info| human_info[:cisbp_families]}.flatten
+  human_cisbp_dbds = human_infos.map{|human_info| human_info[:cisbp_dbds]}.flatten
+  info[:cisbp_families] = human_cisbp_families
+  info[:cisbp_dbds] = human_cisbp_dbds
+}; nil
+
+
 $stderr.puts("TFClass loaded")
 
 File.open('all_tf_infos.json', 'w') do |fw|

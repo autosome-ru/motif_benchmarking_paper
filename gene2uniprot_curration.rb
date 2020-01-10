@@ -52,10 +52,20 @@ MANUALLY_CURRATED_UNIPROT_AC = {
   # TFs from CISBP
   'OSR1'    => 'Q8TAX0', # OSR1_HUMAN
   'ZNF225'  => 'Q9UK10', # ZN225_HUMAN
+  # TFs from mouse uniprobe
+  "Cart1"   => "Q8C8B0", # It's ALX1_MOUSE, not TRAF4_MOUSE
+  "Elf1"    =>"Q60775",  # It's ELF1_MOUSE, not EFNA2_MOUSE
+  "Elf2"    => "Q9JHC9", # It's ELF2_MOUSE, not EFNB2_MOUSE
+  "Erg"     => "P81270", # It's ERG_MOUSE, not KCNH2_MOUSE
+  "Fli1"    => "P26323", # It's FLI1_MOUSE, not FLII_MOUSE
+  "Hbp1"    => "Q8R316", # It's HBP1_MOUSE, not HDBP1_MOUSE
+  "Mrg2"    => "P97368", # It's MEIS3_MOUSE, not CITE4_MOUSE
+  "Osr1"    => "Q9WVG7", # It's OSR1_MOUSE, not OXSR1_MOUSE
+  "Rax"     => "O35602", # It's RX_MOUSE, not PRKRA_MOUSE
 }
 
 #####################################
-###  Undecidable cases. Here we took TFs whose first name matches query ###
+###  Undecidable cases. Here we took TFs whose first name matches query (or there're other reasons to prefer one TF to another) ###
 ###  These records are CONTROVERSIAL BUT TAKEN ###
 # HMX3  {:uniprot_ac=>"A6NHT5", :uniprot_id=>"HMX3_HUMAN", :gene_names=>["HMX3", "NKX-5.1", "NKX5-1"]}
 # KLF14 {:uniprot_ac=>"Q8TD94", :uniprot_id=>"KLF14_HUMAN", :gene_names=>["KLF14", "BTEB5"]}
@@ -66,6 +76,12 @@ MANUALLY_CURRATED_UNIPROT_AC = {
 # TCF4  {:uniprot_ac=>"P15884", :uniprot_id=>"ITF2_HUMAN", :gene_names=>["TCF4", "BHLHB19", "ITF2", "SEF2"]}
 # ZFP36 {:uniprot_ac=>"P26651", :uniprot_id=>"TTP_HUMAN", :gene_names=>["ZFP36", "G0S24", "NUP475", "RNF162A", "TIS11A", "TTP"]}
 # SOX12 {:uniprot_ac=>"O15370", :uniprot_id=>"SOX12_HUMAN", :gene_names=>["SOX12", "SOX22"]}
+# Cutl1 {:uniprot_ac=>"P53564", :uniprot_id=>"CUX1_MOUSE", :gene_names=>["Cux1", "Cutl1", "Cux", "Kiaa4047"]}
+# Irx6  {:uniprot_ac=>"Q9ER75", :uniprot_id=>"IRX6_MOUSE", :gene_names=>["Irx6", "Irxb3"]}
+# Mrg1  {:uniprot_ac=>"P97367", :uniprot_id=>"MEIS2_MOUSE", :gene_names=>["Meis2", "Mrg1", "Stra10"]}
+# Sox21 {:uniprot_ac=>"Q811W0", :uniprot_id=>"SOX21_MOUSE", :gene_names=>["Sox21"]}
+# Tcf1  {:uniprot_ac=>"Q00417", :uniprot_id=>"TCF7_MOUSE", :gene_names=>["Tcf7", "Tcf-1", "Tcf1"]}
+# Tcf3  {:uniprot_ac=>"P15806", :uniprot_id=>"TFE2_MOUSE", :gene_names=>["Tcf3", "Alf2", "Me2", "Tcfe2a"]}
 ###################
 ###  These records are CONTROVERSIAL AND DISCARDED ###
 # HMX3  {:uniprot_ac=>"Q8IZL8", :uniprot_id=>"PELP1_HUMAN", :gene_names=>["PELP1", "HMX3", "MNAR"]}
@@ -77,6 +93,12 @@ MANUALLY_CURRATED_UNIPROT_AC = {
 # TCF4  {:uniprot_ac=>"Q9NQB0", :uniprot_id=>"TF7L2_HUMAN", :gene_names=>["TCF7L2", "TCF4"]}
 # ZFP36 {:uniprot_ac=>"P16415", :uniprot_id=>"ZN823_HUMAN", :gene_names=>["ZNF823", "ZFP36"]}
 # SOX12 {:uniprot_ac=>"O60248", :uniprot_id=>"SOX15_HUMAN", :gene_names=>["SOX15", "SOX12", "SOX20", "SOX26", "SOX27"]}
+# Cutl1 {:uniprot_ac=>"P70403", :uniprot_id=>"CASP_MOUSE", :gene_names=>["Cux1", "Cutl1"]}
+# Irx6  {:uniprot_ac=>"P81066", :uniprot_id=>"IRX2_MOUSE", :gene_names=>["Irx2", "Irx6", "Irxa2"]}
+# Mrg1  {:uniprot_ac=>"O35740", :uniprot_id=>"CITE2_MOUSE", :gene_names=>["Cited2", "Mrg1", "Msg2"]}
+# Sox21 {:uniprot_ac=>"Q04888", :uniprot_id=>"SOX10_MOUSE", :gene_names=>["Sox10", "Sox-10", "Sox21"]}
+# Tcf1  {:uniprot_ac=>"P22361", :uniprot_id=>"HNF1A_MOUSE", :gene_names=>["Hnf1a", "Hnf-1", "Hnf-1a", "Tcf1"]}
+# Tcf3  {:uniprot_ac=>"Q9Z1J1", :uniprot_id=>"TF7L1_MOUSE", :gene_names=>["Tcf7l1", "Tcf3"]}
 
 SEMI_CURRATED_UNIPROT_AC = {
   "HMX3"  => "A6NHT5",
@@ -88,6 +110,12 @@ SEMI_CURRATED_UNIPROT_AC = {
   "TCF4"  => "P15884",
   "ZFP36" => "P26651",
   "SOX12" => "O15370",
+  "Cutl1" =>"P53564",
+  "Irx6"  =>"Q9ER75",
+  "Mrg1"  =>"P97367",
+  "Sox21" =>"Q811W0",
+  "Tcf1"  =>"Q00417",
+  "Tcf3"  =>"P15806",
 }
 ############# Unknown TF ###############
 ### TFs which can't be found in uniprot by name ###
