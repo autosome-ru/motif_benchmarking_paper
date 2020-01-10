@@ -26,11 +26,6 @@ done
 
 #############
 
-ruby transpose_selex_aucs_matrix.rb ./ccg.epfl.ch/pwmtools/benchmarking/uniprobe_hocomoco_cor.txt  > source_data/final/uniprobe_hocomoco_cor.txt
-ruby transpose_selex_aucs_matrix.rb ./ccg.epfl.ch/pwmtools/benchmarking/uniprobe_jaspar_cor.txt    > source_data/final/uniprobe_jaspar_cor.txt
-ruby transpose_selex_aucs_matrix.rb ./ccg.epfl.ch/pwmtools/benchmarking/uniprobe_cisbp_cor.txt     > source_data/final/uniprobe_cisbp_cor.txt
-
-cat source_data/final/uniprobe_hocomoco_cor.txt | head -1    > source_data/final/uniprobe_all_cor.txt
-cat source_data/final/uniprobe_hocomoco_cor.txt | tail -n+2 >> source_data/final/uniprobe_all_cor.txt
-cat source_data/final/uniprobe_jaspar_cor.txt   | tail -n+2 >> source_data/final/uniprobe_all_cor.txt
-cat source_data/final/uniprobe_cisbp_cor.txt    | tail -n+2 >> source_data/final/uniprobe_all_cor.txt
+cat source_data/final/LOG_correlations_hs-mm_manually_selected.tsv | head -1 | sed -re 's/.txt\b//g'  > source_data/final/uniprobe_all_cor.txt
+cat source_data/final/LOG_correlations_hs-mm_manually_selected.tsv | ruby sort_columns.rb | tail -n+2 >> source_data/final/uniprobe_all_cor.txt
+cat source_data/final/LOG_correlations_cisbp_hs-mm_manually_selected.tsv | ruby sort_columns.rb | tail -n+2 >> source_data/final/uniprobe_all_cor.txt
