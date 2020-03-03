@@ -22,7 +22,7 @@ else:
 heatmap_matrix = sys.argv[1]
 heatmap_svg = sys.argv[2]
 
-sns.set(font_scale=1.0, style="ticks", font="Lato")
+sns.set(font_scale=2.5, style="ticks", font="Lato")
 df = pd.read_csv(heatmap_matrix, sep='\t',index_col=0)
 labels = [re.sub(r'.*--skip-me--.*','', k) for k in df.keys()]
 g = sns.heatmap(df,
