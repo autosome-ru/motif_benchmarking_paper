@@ -23,8 +23,8 @@ CisbpMotif = Struct.new('CisbpMotif', *column_mapping.keys, keyword_init: true) 
     info[:sr_no_threshold] = (info[:sr_no_threshold] == 'None') ? nil : Integer(info[:sr_no_threshold])
     info[:motif_type] = (info[:motif_type] == 'None') ? nil : info[:motif_type]
     info[:dbd_count] = (info[:dbd_count] == 'None') ? nil : Integer(info[:dbd_count])
-    info[:dbds] = info[:dbds].split(',')
-    info[:family_names] = info[:family_names].split(',')
+    info[:dbds] = info[:dbds].split(',').reject{|dbd| dbd == 'None'}
+    info[:family_names] = info[:family_names].split(',').reject{|fam| fam == 'None'}
     info[:cutoff] = (info[:cutoff] == 'None') ? nil : Float(info[:cutoff])
     info[:pmids] = (info[:pmids] == 'None') ? [] : Array(info[:pmids])
     info[:msource_version] = (info[:msource_version] == 'None') ? nil : info[:msource_version]
