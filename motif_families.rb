@@ -1,15 +1,16 @@
 require 'json'
-TFCLASS_LEVELS = [:tf_superclass, :tf_class, :tf_family, :tf_subfamily, :tf_genus, :tf_molecular_species]
 
-tfclass_level = Integer(ARGV[0])
-tfclass_level_name = TFCLASS_LEVELS[tfclass_level - 1]
+tfclass_level_name = ARGV[0].to_sym
 
-motif_tf_pairs = [
-  'source_data/motifs/hocomoco_genes2mat.txt',
-  'source_data/motifs/jaspar_genes2mat.txt',
-].flat_map{|fn|
+motif_tf_pairs ||= [
+  ['source_data/motifs/hocomoco_genes2mat.txt', ->(motif_name){ motif_name }],
+  ['source_data/motifs/jaspar_genes2mat.txt', ->(motif_name){ motif_name.split('_').first }],
+  ['ccg.epfl.ch/pwmtools/benchmarking/genes2cisbp.txt', ->(motif_name){ motif_name }],
+].flat_map{|fn, motif_name_transformation|
   File.readlines(fn).map{|l|
     l.split("\t").map(&:strip)
+  }.map{|tf, motif_name, *rest|
+    [tf, motif_name_transformation.call(motif_name)]
   }
 }
 
