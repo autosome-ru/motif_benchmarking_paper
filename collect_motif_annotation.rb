@@ -63,11 +63,16 @@ cisbp_motifs = File.readlines('source_data/annotation/cisbp_refined.tsv').flat_m
     motif_length = nil
     $stderr.puts "Motif length for #{motif_name} not found"    
   end
-  cisbp_uniprot_acs.split(';').map{|uniprot_ac|
-    uniprot_id = request_uniprot_data_by_uniprot_ac(uniprot_ac)[:uniprot_id]
-    tf = uniprot_id && !uniprot_id.empty? ? uniprot_id : uniprot_ac
-    ["cisbp_#{inference_type}", motif, tf, gene, source_type, motif_length, family_1, family_2, family_3, family_4, cisbp_families, cisbp_dbds]
-  }.uniq
+  uniprot_acs = cisbp_uniprot_acs.split(';')
+  if !uniprot_acs.empty?
+    uniprot_acs.map{|uniprot_ac|
+      uniprot_id = request_uniprot_data_by_uniprot_ac(uniprot_ac)[:uniprot_id]
+      tf = uniprot_id && !uniprot_id.empty? ? uniprot_id : uniprot_ac
+      ["cisbp_#{inference_type}", motif, tf, gene, source_type, motif_length, family_1, family_2, family_3, family_4, cisbp_families, cisbp_dbds]
+    }.uniq
+  else
+    [["cisbp_#{inference_type}", motif, nil, gene, source_type, motif_length, family_1, family_2, family_3, family_4, cisbp_families, cisbp_dbds]]
+  end
 }
 
 header = ['collection', 'motif', 'tf', 'gene', 'source_type', 'motif_length', *(1..4).map{|i| "TF_Class_level_#{i}"}, 'cisbp_families', 'cisbp_dbds']

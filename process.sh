@@ -43,10 +43,17 @@ ruby collect_tf_annotation.rb
 
 ruby annotate_cisbp.rb
 ruby collect_motif_annotation.rb > source_data/annotation/motif_annotation_final.tsv
+ruby extract_motif_features.rb source_data/annotation/motif_annotation_final.tsv > source_data/annotation/motif_annotation_final_features.tsv
+( cat source_data/annotation/motif_annotation_final_features.tsv | head -1 | cuttab -f1,2,5,6,13,14,15;
+  cat source_data/annotation/motif_annotation_final_features.tsv | tail -n+2 | cuttab -f1,2,5,6,13,14,15 | sort -u;
+) > source_data/annotation/motif_features_uniq.tsv
+ruby cleanup_annotation.rb
 
-ruby motif_families.rb 2 > motif_classes.tsv
-ruby motif_families.rb 3 > motif_families.tsv
+ruby motif_families.rb tf_class > motif_classes.tsv
+ruby motif_families.rb tf_family > motif_families.tsv
+ruby motif_families.rb cisbp_families > motif_cisbpfams.tsv
 
+# best_motifs.rb was used to generate chipseq_best_motifs_with_classes.tsv and chipseq_best_motifs_with_families.tsv
 ruby family_aggregator.rb chipseq_best_motifs_with_classes.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_classes_aggregated.tsv
 # ruby family_aggregator.rb chipseq_best_motifs_with_families.tsv --drop-unknown-experiment --drop-unknown-motif > chipseq_best_motifs_with_families_aggregated.tsv
 
@@ -82,28 +89,34 @@ cat chipseq_best_motifs_with_families.tsv | awk -F $'\t' -e '((NR==1) || ($6 ~ /
 
 ################################
 # Find motifs which perform well
-ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2  > results/chipseq/best_motifs.classes.tsv
-ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3  > results/chipseq/best_motifs.families.tsv
-ruby best_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  2  > results/selex10/best_motifs.classes.tsv
-ruby best_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  3  > results/selex10/best_motifs.families.tsv
 
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2  0.7  > results/chipseq/good_motifs_0.7.classes.tsv
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2  0.75  > results/chipseq/good_motifs_0.75.classes.tsv
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  2  0.8  > results/chipseq/good_motifs_0.8.classes.tsv
+for AGGREGATION_LEVEL in tf_class tf_family cisbp_families; do
+  ruby best_motifs.rb  source_data/final/remap_all_roc.txt $AGGREGATION_LEVEL --only-common-experiment-tfs > results/remap/best_motifs.${AGGREGATION_LEVEL}.tsv
+  ruby best_motifs.rb  source_data/final/jy10_all_roc.txt  $AGGREGATION_LEVEL --only-common-experiment-tfs > results/jy10/best_motifs.${AGGREGATION_LEVEL}.tsv
+  ruby best_motifs.rb  source_data/final/jy50_all_roc.txt  $AGGREGATION_LEVEL --only-common-experiment-tfs > results/jy50/best_motifs.${AGGREGATION_LEVEL}.tsv
+  # ruby best_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  $AGGREGATION_LEVEL --only-common-experiment-tfs > results/chipseq/best_motifs.${AGGREGATION_LEVEL}.tsv
+  # ruby best_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  $AGGREGATION_LEVEL --only-common-experiment-tfs > results/selex10/best_motifs.${AGGREGATION_LEVEL}.tsv
+  for AUC_THRESHOLD in 0.7  0.75  0.8; do
+    ruby good_motifs.rb  source_data/final/remap_all_roc.txt  $AGGREGATION_LEVEL  $AUC_THRESHOLD --only-common-experiment-tfs > results/remap/good_motifs_${AUC_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+    ruby good_motifs.rb  source_data/final/jy10_all_roc.txt  $AGGREGATION_LEVEL  $AUC_THRESHOLD --only-common-experiment-tfs > results/jy10/good_motifs_${AUC_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+    ruby good_motifs.rb  source_data/final/jy50_all_roc.txt  $AGGREGATION_LEVEL  $AUC_THRESHOLD --only-common-experiment-tfs > results/jy50/good_motifs_${AUC_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+    # ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  $AGGREGATION_LEVEL  $AUC_THRESHOLD --only-common-experiment-tfs > results/chipseq/good_motifs_${AUC_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+    # ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  $AGGREGATION_LEVEL  $AUC_THRESHOLD --only-common-experiment-tfs > results/selex10/good_motifs_${AUC_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+  done
+done
 
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3  0.7  > results/chipseq/good_motifs_0.7.families.tsv
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3  0.75  > results/chipseq/good_motifs_0.75.families.tsv
-ruby good_motifs.rb  source_data/chipseq/motifs_vs_remap.tsv  3  0.8  > results/chipseq/good_motifs_0.8.families.tsv
+for AGGREGATION_LEVEL in tf_class tf_family cisbp_families; do
+  ruby best_motifs.rb  source_data/final/uniprobe_all_cor.txt $AGGREGATION_LEVEL > results/uniprobe/best_motifs.${AGGREGATION_LEVEL}.tsv
+  for COR_THRESHOLD in 0.2 0.3 0.4 0.5 0.6 0.7 0.75 0.8 0.85 0.9; do
+    ruby good_motifs.rb  source_data/final/uniprobe_all_cor.txt  $AGGREGATION_LEVEL  $COR_THRESHOLD > results/uniprobe/good_motifs_${COR_THRESHOLD}.${AGGREGATION_LEVEL}.tsv
+  done
+done
 
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  2  0.7  > results/selex10/good_motifs_0.7.classes.tsv
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  2  0.75  > results/selex10/good_motifs_0.75.classes.tsv
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  2  0.8  > results/selex10/good_motifs_0.8.classes.tsv
 
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  3  0.7  > results/selex10/good_motifs_0.7.families.tsv
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  3  0.75  > results/selex10/good_motifs_0.75.families.tsv
-ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  3  0.8  > results/selex10/good_motifs_0.8.families.tsv
-
-# See
+# Open:
+# python3 -m http.server 8080
+#
+# And see:
 # http://localhost:8080/alluvial-plot.html?tsv=results/chipseq/best_motifs.classes.tsv
 # http://localhost:8080/alluvial-plot.html?tsv=chipseq_best_motifs_families_Forkhead.tsv
 # http://localhost:8080/alluvial-plot.html?tsv=chipseq_best_motifs_families_Tryptophan.tsv
@@ -111,6 +124,22 @@ ruby good_motifs.rb  source_data/selex/motifs_vs_selex10.tsv  3  0.8  > results/
 # http://localhost:8080/alluvial-plot-tfs.html?tsv=chipseq_best_motifs_families_C2H2-zinc-fingers.tsv
 # http://localhost:8080/alluvial-plot-tfs.html?tsv=chipseq_best_motifs_families_Forkhead.tsv
 # http://localhost:8080/alluvial-plot-tfs.html?tsv=chipseq_best_motifs_families_Tryptophan.tsv
+
+for DATASET_TYPE in remap jy10 jy50; do
+  ruby good_motifs.rb  source_data/final/${DATASET_TYPE}_all_roc.txt  cisbp_families  0.0 --only-common-experiment-tfs \
+    | awktab -e '{print $4 "\t" $5 "\t" $1 "\t" $6 }' \
+    | awktab -e '(NR==1 || $3 == $4){print $0}' \
+    | ruby feature_quality_correlation.rb \
+    > results/${DATASET_TYPE}/motif_tf_aucs.${DATASET_TYPE}.tsv
+done
+
+# script needs manual fixes not to fail on missing values
+ruby good_motifs.rb  source_data/final/uniprobe_all_cor.txt  cisbp_families  -100500.0 \
+  | awktab -e '{print $4 "\t" $5 "\t" $1 "\t" $6 }' \
+  | awktab -e '(NR==1 || $3 == $4){print $0}' \
+  | ruby feature_quality_correlation.rb \
+  > results/uniprobe/motif_tf_aucs.uniprobe.tsv
+
 
 ################################
 ruby auc_infos_by_family.rb

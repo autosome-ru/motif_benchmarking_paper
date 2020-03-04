@@ -16,27 +16,64 @@ tfclass_id = function(str){
 		return [Infinity]; // motifs without TFClass should go in the end
 	}
 }
+
 tfclass_comparator = function(a, b) {
 	var a_fam = tfclass_id(a);
 	var b_fam = tfclass_id(b);
-	if (a_fam < b_fam) {
-	    return -1;
-	} else if (a_fam > b_fam) {
-	    return 1;
+	for(var i = 0; i < a_fam.length; ++i) {
+		if (a_fam[i] < b_fam[i]) {
+			return -1;
+		} else if (a_fam[i] > b_fam[i]) {
+			return 1;
+		}
 	}
 	return 0;
 }
 
+lexicographic_comparator = function(a, b) {
+	var a_upper = a.toUpperCase();
+	var b_upper = b.toUpperCase();
+	if (a_upper < b_upper) {
+		return -1;
+	} else if (a_upper > b_upper) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+
 prepare_families_graph = function(data, key_from, key_to) {
 	var fam2fam = data.map(function(row){
-		return {from: row[key_from], to: row[key_to]};
+		// return {from: row.motif_family + ' - ' + row[key_from], to: row[key_to] + ' - ' + row.experiment_family, num_experiments: row['num_experiments'], ...row};
+		return {from: row[key_from], to: row[key_to], num_experiments: row['num_experiments'], ...row};
 	});
+	// fam2fam = fam2fam.filter(row => row.num_experiments >= 2)
+	fam2fam = fam2fam.filter(row => (row.motif_family != 'ambiguous') && (row.experiment_family != 'ambiguous'))
+	fam2fam = fam2fam.filter(row => (row.motif_family != 'unknown') && (row.experiment_family != 'unknown'))
+	// fam2fam = fam2fam.filter(row => [2, 3] <= tfclass_id(row.motif_family) && tfclass_id(row.motif_family) < [2, 4]);
+	// fam2fam = fam2fam.filter(row => [3, 3] <= tfclass_id(row.motif_family) && tfclass_id(row.motif_family) < [3, 4]);
+	// fam2fam = fam2fam.filter(row => [3, 5] <= tfclass_id(row.motif_family) && tfclass_id(row.motif_family) < [3, 6]);
 	fam_counts = count_elements(fam2fam.map(o => [o.from, o.to]).flat());
 	fams = Object.keys(fam_counts);
-	src_nodes = uniq( fam2fam.map(fam => fam.from + ':from') ).sort(tfclass_comparator).map(name => Object({name: name}));
-	dst_nodes = uniq( fam2fam.map(fam => fam.to + ':to') ).sort(tfclass_comparator).map(name => Object({name: name}));
+	var tf_classes = uniq(fams.map(fam => 'separator{' + tfclass_id(fam).slice(0,2).join('.') + '.99}'));
+	src_nodes = uniq( fam2fam.map(fam => fam.from).concat(tf_classes).map(fam_name => fam_name + ':from') ).sort(lexicographic_comparator).map(name => Object({name: name}));
+	// nodes.push({name: tf_class + ':from'});
+	dst_nodes = uniq( fam2fam.map(fam => fam.to).concat(tf_classes).map(fam_name => fam_name + ':to')  ).sort(lexicographic_comparator).map(name => Object({name: name}));
+	// nodes.push({name: tf_class + ':to'});
 	nodes = src_nodes.concat(dst_nodes);
 	links = [];
+	// for (let idx in tf_classes) {
+	// 	let tf_class = tf_classes[idx];
+	// 	link = {
+	// 		source: tf_class + ':from',
+	// 		target: tf_class + ':to',
+	// 		value: 5,
+	// 		names: [tf_class, tf_class],
+	// 	};
+	// 	links.push(link);
+	// }
+	console.log(fam_counts);
 	for (let src_fam in fams) {
 		for (let dst_fam in fams) {
 			var count = fam2fam.filter(row => (row.from == fams[src_fam]) && (row.to == fams[dst_fam])).length;
@@ -44,13 +81,15 @@ prepare_families_graph = function(data, key_from, key_to) {
 				link = {
 					source: fams[src_fam] + ':from',
 					target: fams[dst_fam] + ':to',
-					value: count,
+					// value: count, // for best_motifs
+					value: ((count >= 100) ? count : 100) ** 0.5, // for good_motifs
 					names: [fams[src_fam], fams[dst_fam]],
 				};
 				links.push(link);
 			}
 		}
 	}
+	console.log(links);
 
 	graph = {
 		nodes: nodes,
@@ -71,9 +110,9 @@ draw_sankey = function(graph, colorize_by, width, height) {
 		// ["other", "unknown"],
 		// ["#AAAAAA","#4D4D4D","#F15854","#FAA43A","#e5d00d","#60BD68","#5DA5DA","#F17CB0","#975597","#B2912F",]
 		[
-			'C2H2 zinc finger factors{2.3}', // several zinc finger families are here
-			'Fork head / winged helix factors{3.3}', // FOX-s are here
-			'Tryptophan cluster factors{3.5}', // ETS-s are here
+			'C2H2 zinc finger factors{2.3}', 'C2H2 ZF', // several zinc finger families are here
+			'Fork head / winged helix factors{3.3}', 'Forkhead', // FOX-s are here
+			'Tryptophan cluster factors{3.5}', 'Ets', /*'IRF', 'Myb/SANT',*/ // ETS-s are here
 
 			'Three-zinc finger Kruppel-related factors{2.3.1}', ...tfs_by_family['kruppel'],
 			'Factors with multiple dispersed zinc fingers{2.3.4}', ...tfs_by_family['dispersed_zinc'],
@@ -81,9 +120,9 @@ draw_sankey = function(graph, colorize_by, width, height) {
 			'Ets-related factors{3.5.2}', ...tfs_by_family['ets'], // ETS-s are here
 		],
 		[
-			'#F15854',
-			'#60BD68',
-			'#5DA5DA',
+			'#F15854', '#F15854',
+			'#60BD68', '#60BD68',
+			'#5DA5DA', '#5DA5DA', //'#5DA5DA', '#5DA5DA',
 
 			...Array(1 + tfs_by_family['kruppel'].length).fill('#faa43a'),
 			...Array(1 + tfs_by_family['dispersed_zinc'].length).fill('#F10854'),
@@ -117,31 +156,33 @@ draw_sankey = function(graph, colorize_by, width, height) {
 
 	svg.append("g")
 	.selectAll("rect")
-	.data(graph.nodes)
+	.data(graph.nodes.filter(node => !node.name.startsWith('separator')))
 	.join("rect")
 	  .attr("x", d => d.x0)
 	  .attr("y", d => d.y0)
 	  .attr("height", d => d.y1 - d.y0)
 	  .attr("width", d => d.x1 - d.x0)
 	.append("title")
+		.attr("font-family", "Lato")
 	  .text(d => `${d.name}\n${d.value.toLocaleString()}`);
 
 	svg.append("g")
 	  .attr("fill", "none")
 	.selectAll("g")
-	.data(graph.links)
+	.data(graph.links.filter(link => !link.names[0].startsWith('separator')))
 	.join("path")
 	  .attr("d", d3.sankeyLinkHorizontal())
+	  // .attr("stroke", d => color(d.names[color_idx].replace('\u00FC', 'u').split(' - ')[color_idx] )) // Krüppel --> Kruppel
 	  .attr("stroke", d => color(d.names[color_idx].replace('\u00FC', 'u') )) // Krüppel --> Kruppel
 	  .attr("stroke-width", d => d.width)
 	  .style("mix-blend-mode", "multiply")
 	.append("title")
-	  .text(d => `${d.names.join(" → ")}\n${d.value.toLocaleString()}`);
+	  .text(d => `${d.names.join(" \u2192 ")}\n${d.value.toLocaleString()}`);
 
 	svg.append("g")
 	  .style("font", "10px sans-serif")
 	.selectAll("text")
-	.data(graph.nodes)
+	.data(graph.nodes.filter(node => !node.name.startsWith('separator')))
 	.join("text")
 		.attr("font-family", "Lato")
 	  .attr("x", d => d.x0 < width / 2 ? d.x1 - 10 : d.x0 + 10)
@@ -149,9 +190,9 @@ draw_sankey = function(graph, colorize_by, width, height) {
 	  .attr("dy", "0.35em")
 	  .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start")
 	  .text(d => d.name.replace(/:from$/, '').replace(/:to$/, ''))
-	.append("tspan")
-	  .attr("fill-opacity", 0.7)
-	  .text(d => ` ${d.value.toLocaleString()}`);
+	// .append("tspan")
+	//   .attr("fill-opacity", 0.7)
+	//   .text(d => ` ${d.value.toLocaleString()}`);
 }
 
 // from https://stackoverflow.com/a/23218877/10712892

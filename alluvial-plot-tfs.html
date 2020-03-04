@@ -14,11 +14,11 @@
 			var url_string = window.location.href;
 			var url = new URL(url_string);
 			var tsv_fn = url.searchParams.get("tsv");
-			var width = 800, height = 300;
+			var width = 800, height = 500;
 			data = d3.tsv(tsv_fn, d3.autoType);
 
 			data.then(function(data){
-				graph = prepare_families_graph(data, 'tfs_of_best_motif', 'experiment_TF_family');
+				graph = prepare_families_graph(data, 'tfs_of_motif', 'experiment_TF');
 				draw_sankey(graph, 'from', width, height);
 				add_export_button();
 			});
