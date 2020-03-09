@@ -131,6 +131,11 @@ for DATASET_TYPE in remap jy10 jy50; do
     | awktab -e '(NR==1 || $3 == $4){print $0}' \
     | ruby feature_quality_correlation.rb \
     > results/${DATASET_TYPE}/motif_tf_aucs.${DATASET_TYPE}.tsv
+
+  ruby good_motifs.rb  source_data/final/${DATASET_TYPE}_all_roc.txt  cisbp_families  0.0 --only-common-experiment-tfs \
+    | awktab -e '{print $4 "\t" $5 "\t" $1 "\t" $6 }' \
+    | ruby feature_quality_correlation.rb \
+    > results/${DATASET_TYPE}/motif_tf_aucs.all.${DATASET_TYPE}.tsv
 done
 
 # script needs manual fixes not to fail on missing values
@@ -139,6 +144,11 @@ ruby good_motifs.rb  source_data/final/uniprobe_all_cor.txt  cisbp_families  -10
   | awktab -e '(NR==1 || $3 == $4){print $0}' \
   | ruby feature_quality_correlation.rb \
   > results/uniprobe/motif_tf_aucs.uniprobe.tsv
+
+ruby good_motifs.rb  source_data/final/uniprobe_all_cor.txt  cisbp_families  -100500.0 \
+  | awktab -e '{print $4 "\t" $5 "\t" $1 "\t" $6 }' \
+  | ruby feature_quality_correlation.rb \
+  > results/uniprobe/motif_tf_aucs.all.uniprobe.tsv
 
 
 ################################
